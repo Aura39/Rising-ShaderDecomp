@@ -1,0 +1,75 @@
+sampler g_AlbedoSampler;
+float4 g_CameraParam;
+sampler g_NormalSampler;
+float4x4 g_Proj;
+float4 g_SpotLightCol;
+float4 g_SpotLightPos;
+float4 g_TargetUvParam;
+sampler g_ZSampler;
+float4 g_otherParam;
+float4 g_spot_angle;
+float4 g_spot_param;
+
+float4 main(float4 texcoord : TEXCOORD) : COLOR
+{
+	float4 o;
+
+	float4 r0;
+	float4 r1;
+	float4 r2;
+	float4 r3;
+	r0.x = 1 / transpose(g_Proj)[0].x;
+	r0.y = 1 / texcoord.w;
+	r0.yz = r0.yy * texcoord.xy;
+	r1.xy = float2(0.5, -0.5);
+	r0.yz = r0.yz * r1.xy + g_TargetUvParam.xy;
+	r0.yz = r0.yz + 0.5;
+	r0.w = r0.y * 2 + -1;
+	r1 = tex2D(g_ZSampler, r0.yzzw);
+	r1.x = r1.x * g_CameraParam.y + g_CameraParam.x;
+	r0.w = r0.w * r1.x;
+	r2.x = r0.x * r0.w;
+	r0.x = r0.z * -2 + 1;
+	r0.x = r1.x * r0.x;
+	r2.z = -r1.x;
+	r0.w = 1 / transpose(g_Proj)[1].y;
+	r2.y = r0.w * r0.x;
+	r1.xyz = -r2.xyz + g_SpotLightPos.xyz;
+	r0.x = dot(r1.xyz, r1.xyz);
+	r0.x = 1 / sqrt(r0.x);
+	r1.xyz = r0.xxx * r1.xyz;
+	r0.x = 1 / r0.x;
+	r0.x = r0.x * g_otherParam.z;
+	r0.x = -r0.x + 1;
+	r0.x = r0.x * g_otherParam.w;
+	r0.w = dot(r1.xyz, g_spot_angle.xyz);
+	r1.x = r0.w + -g_spot_param.x;
+	r1.y = r1.x;
+	r1.x = r1.x * g_spot_angle.w;
+	r1.x = r1.x * g_otherParam.y;
+	r2 = tex2D(g_NormalSampler, r0.yzzw);
+	r3 = tex2D(g_AlbedoSampler, r0.yzzw);
+	r2.xyz = r2.xyz * 2 + -1;
+	r0.y = r2.w + -0.495;
+	r0.z = dot(g_spot_angle.xyz, r2.xyz);
+	r0.z = (-r1.y >= 0) ? 0 : r0.z;
+	r1.y = r0.z * 0.5;
+	r0.w = r0.w * 0.5 + r1.y;
+	r1.y = frac(-r0.z);
+	r0.z = r0.z + r1.y;
+	r0.z = r0.z * r0.w;
+	r0.z = r1.x * r0.z;
+	r0.x = r0.x * r0.z;
+	r0.z = (-r0.y >= 0) ? 0 : 1;
+	r0.y = (r0.y >= 0) ? -0 : -1;
+	r0.y = r0.y + r0.z;
+	r1.xyz = r0.yyy * g_SpotLightCol.xyz;
+	r1.xyz = r0.xxx * r1.xyz;
+	r0.x = r0.x + r3.w;
+	r1.xyz = r1.xyz * r3.xyz;
+	r0.xzw = r0.xxx * r1.xyz;
+	o.xyz = (r0.yyy >= 0) ? r0.xzw : 0;
+	o.w = 1;
+
+	return o;
+}

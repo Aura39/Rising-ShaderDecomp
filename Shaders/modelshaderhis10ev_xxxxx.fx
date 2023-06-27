@@ -1,0 +1,107 @@
+sampler Color_1_sampler;
+float4 HologramBaseColor;
+float4 HologramVelvetColor;
+float4 Incidence_param;
+float4 ambient_rate;
+float4 ambient_rate_rate;
+float3 fog;
+float4 g_All_Offset;
+float4 g_NormalWeightParam;
+float4 g_WeightParam;
+sampler incidence_sampler;
+float4 lightpos;
+sampler normalmap1_sampler;
+sampler normalmap2_sampler;
+float4 prefogcolor_enhance;
+float4 tile;
+sampler weightmap1_sampler;
+
+struct PS_IN
+{
+	float4 texcoord : TEXCOORD;
+	float4 texcoord1 : TEXCOORD1;
+	float4 texcoord2 : TEXCOORD2;
+	float3 texcoord3 : TEXCOORD3;
+};
+
+float4 main(PS_IN i) : COLOR
+{
+	float4 o;
+
+	float4 r0;
+	float4 r1;
+	float4 r2;
+	float4 r3;
+	float3 r4;
+	r0.xy = lerp(i.texcoord.zw, i.texcoord.xy, g_NormalWeightParam.zz);
+	r0.zw = r0.xy * tile.xy;
+	r1 = tex2D(normalmap2_sampler, r0.zwzw);
+	r2.xy = lerp(r1.zw, r1.xy, g_NormalWeightParam.yy);
+	r1.xy = r2.xy * 2 + -1;
+	r2 = tex2D(weightmap1_sampler, r0.zwzw);
+	r3 = tex2D(normalmap1_sampler, r0.zwzw);
+	r0.zw = r3.xy * 2 + -1;
+	r1.z = dot(r2.xyz, g_WeightParam.xyz);
+	r1.w = r1.z * g_NormalWeightParam.x;
+	r2.z = 1;
+	r1.z = g_NormalWeightParam.x * r1.z + r2.z;
+	r1.z = 1 / r1.z;
+	r0.zw = r1.xy * r1.ww + r0.zw;
+	r0.zw = r1.zz * r0.zw;
+	r1.x = r0.z * i.texcoord2.w;
+	r1.y = -r0.w;
+	r0.z = dot(r1.z, r1.z) + 0;
+	r0.z = -r0.z + 1;
+	r0.z = 1 / sqrt(r0.z);
+	r0.z = 1 / r0.z;
+	r2.xyz = i.texcoord3.xyz;
+	r3.xyz = r2.yzx * i.texcoord2.zxy;
+	r2.xyz = i.texcoord2.yzx * r2.zxy + -r3.xyz;
+	r1.yzw = r1.yyy * r2.xyz;
+	r1.xyz = r1.xxx * i.texcoord2.xyz + r1.yzw;
+	r1.xyz = r0.zzz * i.texcoord3.xyz + r1.xyz;
+	r2.xyz = normalize(r1.xyz);
+	r0.z = dot(lightpos.xyz, r2.xyz);
+	r0.w = dot(lightpos.xyz, i.texcoord3.xyz);
+	r0.z = -r0.w + r0.z;
+	r1.xy = r0.xy + g_All_Offset.xy;
+	r3 = tex2D(incidence_sampler, r0);
+	r1 = tex2D(Color_1_sampler, r1);
+	r0.xy = -r1.yy + r1.xz;
+	r1.w = max(abs(r0.x), abs(r0.y));
+	r0.x = r1.w + -0.015625;
+	r0.y = (-r0.x >= 0) ? 0 : 1;
+	r0.x = (r0.x >= 0) ? -0 : -1;
+	r0.x = r0.x + r0.y;
+	r0.x = (r0.x >= 0) ? -r0.x : -0;
+	r1.xz = (r0.xx >= 0) ? r1.yy : r1.xz;
+	r4.xyz = normalize(-i.texcoord1.xyz);
+	r0.x = dot(r4.xyz, lightpos.xyz);
+	r0.y = dot(r4.xyz, r2.xyz);
+	r0.y = r0.y * 255 + 0.5;
+	r0.xz = r0.xz + 1;
+	r0.x = r0.x * Incidence_param.z;
+	r0.x = r0.x * 0.5;
+	r2.xyz = lerp(r1.xyz, r3.xyz, r0.xxx);
+	r1.xyz = r2.xyz * ambient_rate.xyz;
+	r1.xyz = r1.xyz * ambient_rate_rate.xyz;
+	r0.xzw = r0.zzz * r1.xyz;
+	r1.x = frac(r0.y);
+	r0.y = r0.y + -r1.x;
+	r0.y = r0.y * -0.003921569 + 1;
+	r0.y = log2(r0.y);
+	r1.x = r0.y * HologramVelvetColor.w;
+	r0.y = r0.y * HologramBaseColor.w;
+	r0.y = exp2(r0.y);
+	r0.y = -r0.y + 1;
+	r0.y = r0.y * prefogcolor_enhance.w;
+	o.w = r0.y;
+	r0.y = exp2(r1.x);
+	r1.xyz = r0.yyy * HologramVelvetColor.xyz;
+	r0.xyz = r0.xzw * HologramBaseColor.xyz + r1.xyz;
+	r1.xyz = fog.xyz;
+	r0.xyz = r0.xyz * prefogcolor_enhance.xyz + -r1.xyz;
+	o.xyz = i.texcoord1.www * r0.xyz + fog.xyz;
+
+	return o;
+}

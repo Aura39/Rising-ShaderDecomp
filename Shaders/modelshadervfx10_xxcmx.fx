@@ -1,0 +1,100 @@
+float4 CubeParam;
+sampler RefractMap_sampler;
+float4 Refract_Param;
+float4 SoftPt_Rate;
+float4 ambient_rate;
+samplerCUBE cubemap_sampler;
+float4 finalcolor_enhance;
+float3 fog;
+float4 g_TargetUvParam;
+float4 lightpos;
+sampler nkiMask_sampler;
+float4 nkiTile;
+sampler normalmap_sampler;
+float4 prefogcolor_enhance;
+float4 tile;
+float4x4 viewInverseMatrix;
+
+struct PS_IN
+{
+	float4 color : COLOR;
+	float4 texcoord : TEXCOORD;
+	float4 texcoord1 : TEXCOORD1;
+	float4 texcoord2 : TEXCOORD2;
+	float3 texcoord3 : TEXCOORD3;
+	float3 texcoord4 : TEXCOORD4;
+	float4 texcoord8 : TEXCOORD8;
+};
+
+float4 main(PS_IN i) : COLOR
+{
+	float4 o;
+
+	float4 r0;
+	float4 r1;
+	float4 r2;
+	float4 r3;
+	float3 r4;
+	r0.xy = i.texcoord.zw * nkiTile.xy + nkiTile.zw;
+	r0 = tex2D(nkiMask_sampler, r0);
+	r1 = float4(-0, -0, -0, -1) + i.color;
+	r2.zw = float2(-0.5, 0.5);
+	r1 = SoftPt_Rate.y * r1 + -r2.zzzw;
+	r0.x = r0.w * r1.w;
+	r0.w = ambient_rate.w;
+	r3 = r0.x * r0.w + -0.01;
+	r0.x = r0.x * ambient_rate.w;
+	r0.w = r0.x * prefogcolor_enhance.w;
+	clip(r3);
+	r2.xyz = i.texcoord3.xyz;
+	r3.xyz = r2.yzx * i.texcoord2.zxy;
+	r2.xyz = i.texcoord2.yzx * r2.zxy + -r3.xyz;
+	r3.xy = i.texcoord.zw * tile.xy + tile.zw;
+	r3 = tex2D(normalmap_sampler, r3);
+	r3.xyz = r3.xyz + -0.5;
+	r2.xyz = r2.xyz * -r3.yyy;
+	r1.w = r3.x * i.texcoord2.w;
+	r2.xyz = r1.www * i.texcoord2.xyz + r2.xyz;
+	r2.xyz = r3.zzz * i.texcoord3.xyz + r2.xyz;
+	r1.w = dot(r2.xyz, r2.xyz);
+	r1.w = 1 / sqrt(r1.w);
+	r2.xyz = r2.xyz * r1.www + -i.texcoord3.xyz;
+	r3.xy = CubeParam.ww * r2.xy + i.texcoord3.xy;
+	r2.xyz = r2.xyz * CubeParam.www;
+	r2.xyz = Refract_Param.zzz * r2.xyz + i.texcoord3.xyz;
+	r1.w = 1 / i.texcoord8.w;
+	r3.zw = r1.ww * i.texcoord8.xy;
+	r3.zw = r3.zw * float2(-0.5, 0.5) + 0.5;
+	r3.zw = r3.zw + g_TargetUvParam.xy;
+	r3.xy = r3.xy * -Refract_Param.yy + r3.zw;
+	r3 = tex2D(RefractMap_sampler, r3);
+	r4.xyz = lerp(r3.xyz, r1.xyz, Refract_Param.xxx);
+	r1.x = dot(r2.xyz, transpose(viewInverseMatrix)[0].xyz);
+	r1.y = dot(r2.xyz, transpose(viewInverseMatrix)[1].xyz);
+	r1.z = dot(r2.xyz, transpose(viewInverseMatrix)[2].xyz);
+	r1.w = dot(lightpos.xyz, r2.xyz);
+	r2.x = dot(i.texcoord4.xyz, r1.xyz);
+	r2.x = r2.x + r2.x;
+	r3.xyz = r1.xyz * -r2.xxx + i.texcoord4.xyz;
+	r3.w = -r3.z;
+	r3 = tex2D(cubemap_sampler, r3.xyww);
+	r1.x = r3.w * CubeParam.y + CubeParam.x;
+	r1.xyz = r1.xxx * r3.xyz;
+	r2.xyz = r4.xyz * r1.xyz;
+	r3.xyz = r4.xyz * ambient_rate.xyz;
+	r3.w = dot(lightpos.xyz, i.texcoord3.xyz);
+	r1.w = r1.w + -r3.w;
+	r1.w = r1.w * 0.5 + 1;
+	r3.xyz = r1.www * r3.xyz;
+	r4.xyz = r2.xyz * CubeParam.zzz + r3.xyz;
+	r2.xyz = r2.xyz * CubeParam.zzz;
+	r2.xyz = r3.xyz * -r2.xyz + r4.xyz;
+	r1.w = -r2.w + -CubeParam.z;
+	r1.xyz = r1.xyz * r1.www + r2.xyz;
+	r2.xyz = fog.xyz;
+	r1.xyz = r1.xyz * prefogcolor_enhance.xyz + -r2.xyz;
+	r0.xyz = i.texcoord1.www * r1.xyz + fog.xyz;
+	o = r0 * finalcolor_enhance;
+
+	return o;
+}

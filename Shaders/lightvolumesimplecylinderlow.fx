@@ -1,0 +1,70 @@
+sampler g_AlbedoSampler;
+float4 g_CameraParam;
+float4 g_CylinderPos0;
+float4 g_CylinderPos1;
+float4 g_LightCol;
+sampler g_NormalSampler;
+float4x4 g_Proj;
+float4 g_TargetUvParam;
+sampler g_ZSampler;
+
+float4 main(float4 texcoord : TEXCOORD) : COLOR
+{
+	float4 o;
+
+	float4 r0;
+	float4 r1;
+	float4 r2;
+	float4 r3;
+	r0.x = 1 / transpose(g_Proj)[0].x;
+	r0.y = 1 / texcoord.w;
+	r0.yz = r0.yy * texcoord.xy;
+	r1.xy = float2(0.5, -0.5);
+	r0.yz = r0.yz * r1.xy + g_TargetUvParam.xy;
+	r0.yz = r0.yz + 0.5;
+	r0.w = r0.y * 2 + -1;
+	r1 = tex2D(g_ZSampler, r0.yzzw);
+	r1.x = r1.x * g_CameraParam.y + g_CameraParam.x;
+	r0.w = r0.w * r1.x;
+	r2.x = r0.x * r0.w;
+	r0.x = r0.z * -2 + 1;
+	r0.x = r1.x * r0.x;
+	r2.z = -r1.x;
+	r0.w = 1 / transpose(g_Proj)[1].y;
+	r2.y = r0.w * r0.x;
+	r1.xyz = r2.xyz + -g_CylinderPos0.xyz;
+	r3.xyz = g_CylinderPos0.xyz;
+	r3.xyz = -r3.xyz + g_CylinderPos1.xyz;
+	r0.x = dot(r1.xyz, r3.xyz);
+	r0.w = dot(r3.xyz, r3.xyz);
+	r0.w = 1 / r0.w;
+	r0.x = r0.w * r0.x;
+	r1.xyz = r3.xyz * r0.xxx + g_CylinderPos0.xyz;
+	r1.xyz = -r2.xyz + r1.xyz;
+	r0.x = dot(r1.xyz, r1.xyz);
+	r0.x = 1 / sqrt(r0.x);
+	r1.xyz = r0.xxx * r1.xyz;
+	r0.x = 1 / r0.x;
+	r2 = tex2D(g_NormalSampler, r0.yzzw);
+	r3 = tex2D(g_AlbedoSampler, r0.yzzw);
+	r0.yzw = r2.xyz * 2 + -1;
+	r1.w = r2.w + -0.495;
+	r0.y = dot(r1.xyz, r0.yzw);
+	r0.z = (-r1.w >= 0) ? 0 : 1;
+	r0.w = (r1.w >= 0) ? -0 : -1;
+	r0.z = r0.w + r0.z;
+	r1.xyz = r0.zzz * g_LightCol.xyz;
+	r1.xyz = r0.yyy * r1.xyz;
+	r0.y = r0.y + -0.5;
+	r1.w = max(r0.y, 0);
+	r0.y = r1.w + r3.w;
+	r0.w = 1 / g_LightCol.w;
+	r0.x = r0.x * -r0.w + 1;
+	r1.xyz = r0.xxx * r1.xyz;
+	r1.xyz = r1.xyz * r3.xyz;
+	r0.xyw = r0.yyy * r1.xyz;
+	o.xyz = (r0.zzz >= 0) ? r0.xyw : 0;
+	o.w = 1;
+
+	return o;
+}

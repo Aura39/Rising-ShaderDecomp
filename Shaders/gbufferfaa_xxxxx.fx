@@ -1,0 +1,137 @@
+float4 Incidence_param;
+float4 g_All_Offset;
+float4 g_BlurParam;
+sampler g_Color_1_sampler;
+sampler g_Color_2_sampler;
+sampler g_NormalBlendSampler;
+float4 g_NormalWeightParam;
+sampler g_Normalmap2_sampler;
+sampler g_Normalmap_sampler;
+sampler g_OcclusionSampler;
+float4 g_WeightParam;
+float4 g_ambientRate;
+sampler g_incidence_sampler;
+float3 g_lightDir;
+float4 g_normalmapRate;
+float4 g_otherParam;
+float4 g_specParam;
+sampler g_wightmap_sampler;
+
+struct PS_IN
+{
+	float4 texcoord : TEXCOORD;
+	float3 texcoord1 : TEXCOORD1;
+	float4 texcoord2 : TEXCOORD2;
+	float3 texcoord3 : TEXCOORD3;
+	float4 texcoord7 : TEXCOORD7;
+	float2 texcoord8 : TEXCOORD8;
+};
+
+struct PS_OUT
+{
+	float4 color : COLOR;
+	float4 color1 : COLOR1;
+	float4 color2 : COLOR2;
+	float4 color3 : COLOR3;
+};
+
+PS_OUT main(PS_IN i)
+{
+	PS_OUT o;
+
+	float4 r0;
+	float4 r1;
+	float4 r2;
+	float4 r3;
+	float4 r4;
+	float4 r5;
+	float4 r6;
+	r0.xy = lerp(i.texcoord.zw, i.texcoord.xy, g_NormalWeightParam.zz);
+	r0.zw = r0.xy + g_All_Offset.xy;
+	r1 = tex2D(g_OcclusionSampler, r0.zwzw);
+	r2 = tex2D(g_Color_1_sampler, r0.zwzw);
+	o.color.w = r1.x * r1.x;
+	r3.xyz = g_normalmapRate.xyz;
+	r0.zw = r0.xy * r3.yz + g_All_Offset.xy;
+	r4 = tex2D(g_incidence_sampler, r0);
+	r5 = tex2D(g_Normalmap2_sampler, r0.zwzw);
+	r5 = r5 * 2 + -1;
+	r6 = tex2D(g_NormalBlendSampler, r0.zwzw);
+	r0.x = 90;
+	r0.x = r6.x * -r0.x + g_NormalWeightParam.y;
+	r0.x = r0.x * 0.1;
+	r1.y = 1 / sqrt(r0.x);
+	r1.y = 1 / r1.y;
+	r1.yz = r1.yy * r5.zw;
+	r1.yz = r1.yz * 6;
+	r3.yz = r5.xy * 3 + -r1.yz;
+	r1.yz = r0.xx * r3.yz + r1.yz;
+	r1.yz = r1.yz * g_NormalWeightParam.yy;
+	r5 = tex2D(g_Normalmap_sampler, r0.zwzw);
+	r6 = tex2D(g_wightmap_sampler, r0.zwzw);
+	r0.z = dot(r6.xyz, g_WeightParam.xyz);
+	r0.z = r0.z * r0.x + 1;
+	r0.z = 1 / r0.z;
+	r3.yzw = r5.xyz * 2 + -1;
+	r1.w = lerp(r5.w, r2.w, r0.x);
+	r0.w = r1.w * 1.000001;
+	r1.yz = r1.yz * 0.01 + r3.yz;
+	r1.yz = r0.zz * r1.yz;
+	r0.z = 1 + -i.texcoord2.w;
+	r0.z = -r0.z + 1;
+	r3.y = r0.z * r1.y;
+	r3.z = -r1.z;
+	r1.yzw = r3.yzw * g_normalmapRate.xxx;
+	r5.xyz = normalize(i.texcoord2.xyz);
+	r6.xyz = normalize(i.texcoord3.xyz);
+	r3.yzw = r5.zxy * r6.yzx;
+	r3.yzw = r5.yzx * r6.zxy + -r3.yzw;
+	r3.yzw = r1.zzz * r3.yzw;
+	r3.yzw = r1.yyy * r5.xyz + r3.yzw;
+	r1.yzw = r1.www * r6.xyz + r3.yzw;
+	r0.z = dot(g_lightDir.xyz, r6.xyz);
+	r5.xyz = normalize(r1.yzw);
+	r6.xyz = normalize(-i.texcoord1.xyz);
+	r1.y = dot(r5.xyz, r6.xyz);
+	r1.z = dot(r6.xyz, g_lightDir.xyz);
+	r1.z = r1.z + 1;
+	r1.z = r1.z * Incidence_param.z;
+	r1.z = r1.z * 0.5;
+	r1.y = abs(r1.y);
+	r1.w = r1.y * 0.9 + 0.05;
+	r1.y = -r1.y + 1;
+	r2.w = pow(r1.y, Incidence_param.x);
+	r3.yzw = r4.xyz * r1.www;
+	r6.xyz = lerp(r2.xyz, r4.xyz, r1.zzz);
+	r1.y = -r1.z + 1;
+	r2.xyz = r3.yzw * Incidence_param.yyy;
+	r2.xyz = r2.www * r2.xyz;
+	r0.y = 0.5;
+	r4 = tex2D(g_Color_2_sampler, r0);
+	r3.yzw = r4.xyz * r6.xyz;
+	o.color.xyz = r2.xyz * r1.yyy + r3.yzw;
+	r1.xyz = r1.xxx * r3.yzw;
+	o.color1.xyz = r5.xyz * 0.5 + 0.5;
+	r0.x = dot(g_lightDir.xyz, r5.xyz);
+	r0.x = -r0.z + r0.x;
+	r0.x = r0.x * r3.x + 1;
+	r0.xyz = r0.xxx * r1.xyz;
+	o.color2.xyz = r0.xyz * g_ambientRate.xyz;
+	r0.x = -g_specParam.x;
+	r0.x = (-r0.x >= 0) ? 0 : 0.25;
+	r0.y = g_specParam.y;
+	r0.y = r0.y + g_otherParam.x;
+	o.color1.w = r0.x + r0.y;
+	r0.x = 1 / i.texcoord7.z;
+	r0.xy = r0.xx * i.texcoord8.xy;
+	r0.z = 1 / i.texcoord7.w;
+	r0.xy = i.texcoord7.xy * r0.zz + -r0.xy;
+	r1.w = 0.5;
+	o.color3.xy = r0.xy * g_BlurParam.xy + r1.ww;
+	r0.x = abs(g_specParam.x);
+	o.color3.z = r0.x * r0.w;
+	o.color2.w = 0;
+	o.color3.w = g_specParam.z;
+
+	return o;
+}

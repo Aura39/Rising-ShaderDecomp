@@ -1,0 +1,75 @@
+float3 g_EffectiveFocus;
+float3 g_EffectiveFocus2;
+float3 g_Focus;
+float g_OpenRate;
+float g_OpenRate2;
+sampler g_Sampler0;
+sampler g_Sampler1;
+sampler g_Sampler2;
+float g_ShadingRate;
+
+float4 main(float2 texcoord : TEXCOORD) : COLOR
+{
+	float4 o;
+
+	float4 r0;
+	float4 r1;
+	float4 r2;
+	float4 r3;
+	float4 r4;
+	float3 r5;
+	r0.x = g_Focus.x;
+	r0.x = -r0.x + g_EffectiveFocus.x;
+	r0.x = 1 / r0.x;
+	r0.y = r0.x * g_Focus.x;
+	r1 = tex2D(g_Sampler1, texcoord);
+	r0.z = g_Focus.y * r1.x + g_Focus.z;
+	r0.x = r0.z * r0.x + -r0.y;
+	r1.x = g_OpenRate.x;
+	r0.y = -r1.x + g_ShadingRate.x;
+	r0.y = 1 / r0.y;
+	r0.w = r0.y * g_OpenRate.x;
+	r0.y = r0.z * r0.y + -r0.w;
+	r0.z = -r0.z + g_OpenRate2.x;
+	r1.x = max(r0.x, r0.y);
+	r0.x = r1.x * g_EffectiveFocus2.x;
+	r0.x = (r0.z >= 0) ? r0.x : 0;
+	r1 = r0.x * float4(0.00051464845, -0.000118055556, -3.90625E-05, 0.00074444443) + texcoord.xyxy;
+	r2 = tex2D(g_Sampler0, r1);
+	r3 = tex2D(g_Sampler2, r1);
+	r0.y = r0.x;
+	r4.xyz = lerp(r3.xyz, r2.xyz, r0.yyy);
+	r2 = tex2D(g_Sampler0, texcoord);
+	r2.xyz = r4.xyz + r2.xyz;
+	o.w = r2.w;
+	r3 = tex2D(g_Sampler0, r1.zwzw);
+	r1 = tex2D(g_Sampler2, r1.zwzw);
+	r4.xyz = lerp(r1.xyz, r3.xyz, r0.yyy);
+	r1.xyz = r2.xyz + r4.xyz;
+	r2 = r0.x * float4(-0.0006542969, -0.00024861112, -0.0004091797, -0.0008555556) + texcoord.xyxy;
+	r3 = tex2D(g_Sampler0, r2);
+	r4 = tex2D(g_Sampler2, r2);
+	r5.xyz = lerp(r4.xyz, r3.xyz, r0.yyy);
+	r1.xyz = r1.xyz + r5.xyz;
+	r3 = tex2D(g_Sampler0, r2.zwzw);
+	r2 = tex2D(g_Sampler2, r2.zwzw);
+	r4.xyz = lerp(r2.xyz, r3.xyz, r0.yyy);
+	r1.xyz = r1.xyz + r4.xyz;
+	r2 = r0.x * float4(0.0004296875, -0.0008875, -0.00073925784, 0.00048472223) + texcoord.xyxy;
+	r0.xz = r0.xx * 0.0005605469 + texcoord.xy;
+	r3 = tex2D(g_Sampler0, r2);
+	r4 = tex2D(g_Sampler2, r2);
+	r5.xyz = lerp(r4.xyz, r3.xyz, r0.yyy);
+	r1.xyz = r1.xyz + r5.xyz;
+	r3 = tex2D(g_Sampler0, r2.zwzw);
+	r2 = tex2D(g_Sampler2, r2.zwzw);
+	r4.xyz = lerp(r2.xyz, r3.xyz, r0.yyy);
+	r1.xyz = r1.xyz + r4.xyz;
+	r2 = tex2D(g_Sampler0, r0.xzzw);
+	r3 = tex2D(g_Sampler2, r0.xzzw);
+	r4.xyz = lerp(r3.xyz, r2.xyz, r0.yyy);
+	r0.xyz = r1.xyz + r4.xyz;
+	o.xyz = r0.xyz * 0.125;
+
+	return o;
+}
