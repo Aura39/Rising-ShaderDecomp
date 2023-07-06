@@ -1,0 +1,49 @@
+float3 fog;
+float2 fognearfar;
+float4 g_CameraParam;
+float4 g_MatrialColor;
+float4 g_Rate;
+sampler g_Sampler0;
+sampler g_Sampler1;
+float4 g_TargetUvParam;
+
+struct PS_IN
+{
+	float2 texcoord : TEXCOORD;
+	float4 texcoord1 : TEXCOORD1;
+};
+
+float4 main(PS_IN i) : COLOR
+{
+	float4 o;
+
+	float4 r0;
+	float4 r1;
+	float4 r2;
+	r0.x = -fognearfar.x + fognearfar.y;
+	r0.x = 1 / r0.x;
+	r0.y = fognearfar.y + -i.texcoord1.w;
+	r0.x = r0.x * r0.y;
+	r0.yzw = 1;
+	r1 = tex2D(g_Sampler0, i.texcoord);
+	r1 = r1 * g_MatrialColor;
+	r0.yzw = r1.xyz * r0.yzw + -fog.xyz;
+	o.xyz = r0.xxx * r0.yzw + fog.xyz;
+	r0.x = 1 / i.texcoord1.w;
+	r0.xy = r0.xx * i.texcoord1.xy;
+	r1.xy = float2(0.5, -0.5);
+	r0.xy = r0.xy * r1.xy + g_TargetUvParam.xy;
+	r0.xy = r0.xy + 0.5;
+	r0 = tex2D(g_Sampler1, r0);
+	r0.x = r0.x * g_CameraParam.y + g_CameraParam.x;
+	r0.x = r0.x + -i.texcoord1.w;
+	r0.y = 1 / g_Rate.x;
+	r0.x = r0.y * abs(r0.x);
+	r0.x = -r0.x + 1;
+	r2 = r1.w * r0.x + -0.001;
+	r0.x = r0.x * r1.w;
+	o.w = r0.x;
+	clip(r2);
+
+	return o;
+}
