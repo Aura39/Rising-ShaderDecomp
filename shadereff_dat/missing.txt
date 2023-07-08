@@ -1,0 +1,6 @@
+VS: espmodelshadershellpolygon_w.fx (0 bytes)
+VS: espmodelshadershellpolygon_wd.fx (0 bytes)
+VS: espmodelshadershellpolygon_wf.fx (0 bytes)
+VS: espmodelshadershellpolygon_wl.fx (0 bytes)
+VS: espmodelshadershellpolygon_wm.fx (0 bytes)
+VS: espmodelshadershellpolygon_wml.fx (0 bytes)
