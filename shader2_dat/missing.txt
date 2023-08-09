@@ -1,1 +1,1 @@
-VS: modelshaderweight.fx (0 bytes)
+MANUAL-DECOMPILATION REQUIRED : VS: modelshaderweight.fx : Stack Overflow
