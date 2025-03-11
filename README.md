@@ -31,3 +31,8 @@ You can contribute to this project either by:
 - Adding more shaders (not every shader is decompiled, some cause compilation error)
 
 To contribute you need to clone this repository, make changes, and then do a pull request.
+
+## Credits
+
+[Aura39](https://github.com/Aura39/) : Starting the project
+[Gaming With Portals](https://github.com/Gaming-With-Portals/) : Figuring out register importance
