@@ -34,5 +34,5 @@ To contribute you need to clone this repository, make changes, and then do a pul
 
 ## Credits
 
-[Aura39](https://github.com/Aura39/) : Starting the project
-[Gaming With Portals](https://github.com/Gaming-With-Portals/) : Figuring out register importance
+* [Aura39](https://github.com/Aura39/) : Starting the project
+* [Gaming With Portals](https://github.com/Gaming-With-Portals/) : Figuring out register importance
