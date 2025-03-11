@@ -1,7 +1,7 @@
-sampler g_Sampler0;
-float g_ShadowFarInv;
-float4 g_nkiBase;
-float4 g_uvOffset;
+sampler g_Sampler0 : register(s0);
+float g_ShadowFarInv : register(c184);
+float4 g_nkiBase : register(c186);
+float4 g_uvOffset : register(c185);
 
 struct PS_IN
 {

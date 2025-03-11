@@ -1,13 +1,13 @@
-float4 g_Param;
-float4x4 g_RotMatrix;
-float4x4 g_WorldViewProjMatrix;
-float4 g_alpha_param;
-float4 g_ofs_pos;
-float4 g_r_spd;
-float4 g_sin_dist_param;
-float4 g_sin_time_param;
-float4 g_spd;
-float4 g_z_rot_param;
+float4 g_Param : register(c185);
+float4x4 g_RotMatrix : register(c40);
+float4x4 g_WorldViewProjMatrix : register(c24);
+float4 g_alpha_param : register(c190);
+float4 g_ofs_pos : register(c187);
+float4 g_r_spd : register(c189);
+float4 g_sin_dist_param : register(c192);
+float4 g_sin_time_param : register(c44);
+float4 g_spd : register(c188);
+float4 g_z_rot_param : register(c191);
 
 struct VS_IN
 {

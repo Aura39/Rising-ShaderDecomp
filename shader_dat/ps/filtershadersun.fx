@@ -1,9 +1,9 @@
-float4 g_LightCol;
-float4 g_LightPosVP;
-float4 g_LightPow1;
-float4 g_LightPow2;
-sampler g_Sampler0;
-float4 g_TargetUvParam;
+float4 g_LightCol : register(c187);
+float4 g_LightPosVP : register(c184);
+float4 g_LightPow1 : register(c185);
+float4 g_LightPow2 : register(c186);
+sampler g_Sampler0 : register(s13);
+float4 g_TargetUvParam : register(c194);
 
 float4 main(float2 texcoord : TEXCOORD) : COLOR
 {

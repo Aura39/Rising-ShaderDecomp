@@ -1,10 +1,10 @@
-float4 g_CamVec;
-float4 g_Param;
-float4x4 g_WorldViewProjMatrix;
-float4 g_r_pos;
-float4 g_r_spd;
-float4 g_spd;
-float4 g_z_rot_param;
+float4 g_CamVec : register(c191);
+float4 g_Param : register(c185);
+float4x4 g_WorldViewProjMatrix : register(c24);
+float4 g_r_pos : register(c187);
+float4 g_r_spd : register(c189);
+float4 g_spd : register(c188);
+float4 g_z_rot_param : register(c190);
 
 struct VS_IN
 {

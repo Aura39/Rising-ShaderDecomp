@@ -1,12 +1,12 @@
-float3 g_EffectiveFocus;
-float3 g_EffectiveFocus2;
-float3 g_Focus;
-float g_OpenRate;
-float g_OpenRate2;
-sampler g_Sampler0;
-sampler g_Sampler1;
-sampler g_Sampler2;
-float g_ShadingRate;
+float3 g_EffectiveFocus : register(c185);
+float3 g_EffectiveFocus2 : register(c188);
+float3 g_Focus : register(c184);
+float g_OpenRate : register(c186);
+float g_OpenRate2 : register(c189);
+sampler g_Sampler0 : register(s0);
+sampler g_Sampler1 : register(s1);
+sampler g_Sampler2 : register(s2);
+float g_ShadingRate : register(c187);
 
 float4 main(float2 texcoord : TEXCOORD) : COLOR
 {

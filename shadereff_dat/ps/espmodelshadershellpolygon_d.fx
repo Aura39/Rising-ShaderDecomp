@@ -1,9 +1,9 @@
-float4 g_CommonParam;
-float4 g_MatrialColor;
-sampler g_Sampler0;
-sampler g_SamplerBg;
-float4 g_TargetUvParam;
-float4 g_UvParam0;
+float4 g_CommonParam : register(c185);
+float4 g_MatrialColor : register(c184);
+sampler g_Sampler0 : register(s0);
+sampler g_SamplerBg : register(s12);
+float4 g_TargetUvParam : register(c194);
+float4 g_UvParam0 : register(c186);
 
 struct PS_IN
 {

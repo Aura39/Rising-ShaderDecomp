@@ -1,19 +1,19 @@
-sampler Color_1_sampler;
-float4 CubeParam;
-float4 ambient_rate;
-float4 ambient_rate_rate;
-samplerCUBE cubemap2_sampler;
-samplerCUBE cubemap_sampler;
-float3 fog;
-float4 g_All_Offset;
-float g_CubeBlendParam;
-float4 g_eyeLightDir;
-float4 g_eyeLightDir2;
-float4 light_Color;
-float4 prefogcolor_enhance;
-float4 specularParam;
-float4 tile;
-sampler tripleMask_sampler;
+sampler Color_1_sampler : register(s0);
+float4 CubeParam : register(c42);
+float4 ambient_rate : register(c40);
+float4 ambient_rate_rate : register(c71);
+samplerCUBE cubemap2_sampler : register(s9);
+samplerCUBE cubemap_sampler : register(s2);
+float3 fog : register(c67);
+float4 g_All_Offset : register(c76);
+float g_CubeBlendParam : register(c175);
+float4 g_eyeLightDir : register(c187);
+float4 g_eyeLightDir2 : register(c188);
+float4 light_Color : register(c61);
+float4 prefogcolor_enhance : register(c77);
+float4 specularParam : register(c41);
+float4 tile : register(c45);
+sampler tripleMask_sampler : register(s1);
 
 struct PS_IN
 {

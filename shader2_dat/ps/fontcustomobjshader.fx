@@ -1,7 +1,7 @@
-float2 g_GridScale;
-sampler g_Sampler0;
-sampler g_Sampler1;
-sampler g_Sampler2;
+float2 g_GridScale : register(c69);
+sampler g_Sampler0 : register(s13);
+sampler g_Sampler1 : register(s14);
+sampler g_Sampler2 : register(s15);
 
 struct PS_IN
 {

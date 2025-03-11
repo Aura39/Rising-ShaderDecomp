@@ -1,6 +1,6 @@
-float4 blend;
-sampler g_Sampler0;
-float4 g_TargetUvParam;
+float4 blend : register(c185);
+sampler g_Sampler0 : register(s0);
+float4 g_TargetUvParam : register(c194);
 
 float4 main(float2 texcoord : TEXCOORD) : COLOR
 {

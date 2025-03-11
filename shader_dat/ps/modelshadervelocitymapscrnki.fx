@@ -1,6 +1,6 @@
-float4 g_BlurParam;
-sampler g_Sampler0;
-float4 g_uvOffset;
+float4 g_BlurParam : register(c184);
+sampler g_Sampler0 : register(s0);
+float4 g_uvOffset : register(c185);
 
 struct PS_IN
 {

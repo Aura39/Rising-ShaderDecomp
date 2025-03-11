@@ -1,5 +1,5 @@
-float4 g_MatrialColor;
-float4 g_OutLineColor;
+float4 g_MatrialColor : register(c62);
+float4 g_OutLineColor : register(c63);
 
 float4 main(float3 texcoord : TEXCOORD) : COLOR
 {

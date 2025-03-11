@@ -1,7 +1,7 @@
-float g_FloorData;
-float g_FloorOffset;
-float4x4 g_WorldMatrix;
-float4x4 g_WorldViewProjMatrix;
+float g_FloorData : register(c185);
+float g_FloorOffset : register(c186);
+float4x4 g_WorldMatrix : register(c16);
+float4x4 g_WorldViewProjMatrix : register(c24);
 
 struct VS_IN
 {

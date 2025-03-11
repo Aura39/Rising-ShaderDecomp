@@ -1,5 +1,5 @@
-float4x4 g_ShadowView;
-float4x4 g_ShadowViewProjection;
+float4x4 g_ShadowView : register(c32);
+float4x4 g_ShadowViewProjection : register(c28);
 
 struct VS_IN
 {

@@ -1,6 +1,6 @@
-float4 g_CameraParam;
-float4 g_DistParam;
-sampler g_Sampler0;
+float4 g_CameraParam : register(c193);
+float4 g_DistParam : register(c184);
+sampler g_Sampler0 : register(s0);
 
 float4 main(float2 texcoord : TEXCOORD) : COLOR
 {

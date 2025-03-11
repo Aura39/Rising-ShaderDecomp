@@ -1,6 +1,6 @@
-float4 g_MatrialColorVs;
-float4x4 g_Tmp;
-float4x4 g_WorldViewProjMatrix;
+float4 g_MatrialColorVs : register(c184);
+float4x4 g_Tmp : register(c4);
+float4x4 g_WorldViewProjMatrix : register(c24);
 
 struct VS_IN
 {

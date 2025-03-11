@@ -1,12 +1,12 @@
-float4 g_CameraParam;
-float4 g_MatrialColor;
-float4 g_Rate;
-float4 g_Reflectance;
-sampler g_Sampler0;
-sampler g_Sampler1;
-samplerCUBE g_Sampler2;
-sampler g_Sampler3;
-float4x4 g_WorldMatrix_pix;
+float4 g_CameraParam : register(c193);
+float4 g_MatrialColor : register(c184);
+float4 g_Rate : register(c186);
+float4 g_Reflectance : register(c187);
+sampler g_Sampler0 : register(s0);
+sampler g_Sampler1 : register(s1);
+samplerCUBE g_Sampler2 : register(s2);
+sampler g_Sampler3 : register(s3);
+float4x4 g_WorldMatrix_pix : register(c40);
 
 struct PS_IN
 {

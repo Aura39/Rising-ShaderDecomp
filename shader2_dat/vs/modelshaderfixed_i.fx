@@ -1,5 +1,5 @@
-float4x4 g_Projection;
-float4x4 g_View;
+float4x4 g_Projection : register(c4);
+float4x4 g_View : register(c0);
 
 struct VS_IN
 {

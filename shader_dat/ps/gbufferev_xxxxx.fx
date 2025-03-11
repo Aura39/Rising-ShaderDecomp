@@ -1,7 +1,7 @@
-float4 fogType;
-sampler g_Color_1_sampler;
-float4 g_texUseParam;
-float4 lightType;
+float4 fogType : register(c175);
+sampler g_Color_1_sampler : register(s0);
+float4 g_texUseParam : register(c184);
+float4 lightType : register(c174);
 
 struct PS_OUT
 {

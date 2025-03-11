@@ -1,7 +1,7 @@
-float g_ShadowFarInv;
-float4x4 g_ShadowView;
-float4x4 g_ShadowViewProjection;
-float4x4 g_World;
+float g_ShadowFarInv : register(c184);
+float4x4 g_ShadowView : register(c32);
+float4x4 g_ShadowViewProjection : register(c28);
+float4x4 g_World : register(c16);
 
 struct VS_OUT
 {

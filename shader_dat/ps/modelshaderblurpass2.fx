@@ -1,6 +1,6 @@
-sampler g_Sampler0;
-float2 g_offset1;
-float2 g_offset2;
+sampler g_Sampler0 : register(s0);
+float2 g_offset1 : register(c184);
+float2 g_offset2 : register(c185);
 
 float4 main(float2 texcoord : TEXCOORD) : COLOR
 {

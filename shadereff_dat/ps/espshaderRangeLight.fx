@@ -1,11 +1,11 @@
-float4 g_CameraParam;
-float4 g_MatrialColor;
-float4 g_Rate;
-float4 g_Rate2;
-sampler g_Sampler0;
-sampler g_Sampler1;
-float4 g_TargetUvParam;
-float4 g_ViewPos;
+float4 g_CameraParam : register(c193);
+float4 g_MatrialColor : register(c184);
+float4 g_Rate : register(c185);
+float4 g_Rate2 : register(c186);
+sampler g_Sampler0 : register(s0);
+sampler g_Sampler1 : register(s1);
+float4 g_TargetUvParam : register(c194);
+float4 g_ViewPos : register(c187);
 
 float4 main(float4 texcoord1 : TEXCOORD1) : COLOR
 {

@@ -1,5 +1,5 @@
-float4 g_RenderParam;
-float4x4 g_WorldViewProjMatrix;
+float4 g_RenderParam : register(c184);
+float4x4 g_WorldViewProjMatrix : register(c24);
 
 struct VS_IN
 {

@@ -1,24 +1,24 @@
-sampler Color_1_sampler;
-float4 CubeParam;
-sampler RefractMap_sampler;
-float4 Refract_Param;
-sampler ShadowCast_Tex_sampler;
-float4 ambient_rate;
-float4 ambient_rate_rate;
-samplerCUBE cubemap_sampler;
-float4 finalcolor_enhance;
-float3 fog;
-float4 fresnelParam;
-float4 g_All_Offset;
-float2 g_ShadowFarInvPs;
-float g_ShadowUse;
-float4 g_TargetUvParam;
-float4 light_Color;
-float4 lightpos;
-float4 prefogcolor_enhance;
-float3 private_lightDir;
-float2 private_lightParam;
-float4 specularParam;
+sampler Color_1_sampler : register(s0);
+float4 CubeParam : register(c42);
+sampler RefractMap_sampler : register(s12);
+float4 Refract_Param : register(c46);
+sampler ShadowCast_Tex_sampler : register(s10);
+float4 ambient_rate : register(c40);
+float4 ambient_rate_rate : register(c71);
+samplerCUBE cubemap_sampler : register(s1);
+float4 finalcolor_enhance : register(c78);
+float3 fog : register(c67);
+float4 fresnelParam : register(c47);
+float4 g_All_Offset : register(c76);
+float2 g_ShadowFarInvPs : register(c182);
+float g_ShadowUse : register(c180);
+float4 g_TargetUvParam : register(c194);
+float4 light_Color : register(c61);
+float4 lightpos : register(c62);
+float4 prefogcolor_enhance : register(c77);
+float3 private_lightDir : register(c44);
+float2 private_lightParam : register(c45);
+float4 specularParam : register(c41);
 
 struct PS_IN
 {

@@ -1,14 +1,14 @@
-sampler g_AlbedoSampler;
-float4 g_CameraParam;
-float4 g_CylinderPos0;
-float4 g_CylinderPos1;
-float4 g_LightCol;
-sampler g_NormalSampler;
-float4x4 g_Proj;
-sampler g_SpecMaskSampler;
-sampler g_SpecPowSampler;
-float4 g_TargetUvParam;
-sampler g_ZSampler;
+sampler g_AlbedoSampler : register(s0);
+float4 g_CameraParam : register(c193);
+float4 g_CylinderPos0 : register(c184);
+float4 g_CylinderPos1 : register(c185);
+float4 g_LightCol : register(c186);
+sampler g_NormalSampler : register(s1);
+float4x4 g_Proj : register(c4);
+sampler g_SpecMaskSampler : register(s2);
+sampler g_SpecPowSampler : register(s3);
+float4 g_TargetUvParam : register(c194);
+sampler g_ZSampler : register(s5);
 
 float4 main(float4 texcoord : TEXCOORD) : COLOR
 {

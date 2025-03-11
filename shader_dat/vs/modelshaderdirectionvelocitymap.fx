@@ -1,4 +1,4 @@
-float4 g_TargetUvParam;
+float4 g_TargetUvParam : register(c194);
 
 struct VS_IN
 {

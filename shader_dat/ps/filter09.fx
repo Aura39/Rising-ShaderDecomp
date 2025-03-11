@@ -1,5 +1,5 @@
-float4 g_RenderParam;
-sampler g_SamplerTexture;
+float4 g_RenderParam : register(c184);
+sampler g_SamplerTexture : register(s0);
 
 float4 main(float2 texcoord : TEXCOORD) : COLOR
 {

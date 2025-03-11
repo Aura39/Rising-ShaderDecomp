@@ -1,5 +1,5 @@
-sampler g_sampler0;
-sampler g_sampler1;
+sampler g_sampler0 : register(s13);
+sampler g_sampler1 : register(s14);
 
 struct PS_IN
 {

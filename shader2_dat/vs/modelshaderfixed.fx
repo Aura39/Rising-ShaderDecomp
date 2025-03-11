@@ -1,7 +1,7 @@
-float4x4 g_Proj;
-float4x4 g_World;
-float4x4 g_WorldView;
-float4x4 g_WorldViewProj;
+float4x4 g_Proj : register(c4);
+float4x4 g_World : register(c16);
+float4x4 g_WorldView : register(c20);
+float4x4 g_WorldViewProj : register(c24);
 
 struct VS_IN
 {

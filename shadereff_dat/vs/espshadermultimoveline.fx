@@ -1,11 +1,11 @@
-float4 g_ColParam;
-float4 g_GravVec;
-float4 g_MatrialColor;
-float4 g_Param;
-float4x4 g_WorldViewProjMatrix;
-float4 g_r_pos;
-float4 g_r_spd;
-float4 g_spd;
+float4 g_ColParam : register(c186);
+float4 g_GravVec : register(c190);
+float4 g_MatrialColor : register(c184);
+float4 g_Param : register(c185);
+float4x4 g_WorldViewProjMatrix : register(c24);
+float4 g_r_pos : register(c187);
+float4 g_r_spd : register(c189);
+float4 g_spd : register(c188);
 
 struct VS_IN
 {

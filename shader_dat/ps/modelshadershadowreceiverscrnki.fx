@@ -1,5 +1,5 @@
-sampler Shadow_Tex_sampler;
-sampler g_Sampler0;
+sampler Shadow_Tex_sampler : register(s7);
+sampler g_Sampler0 : register(s0);
 
 struct PS_IN
 {

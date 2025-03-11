@@ -1,16 +1,16 @@
-float4 g_CameraParam;
-float4x4 g_Proj;
-float4 g_TargetUvParam;
-sampler g_Z_sampler;
-float4 g_spotLightPos1;
-float4 g_spotLightPos2;
-float4 g_spotLightPos3;
-float4 g_spot_angle1;
-float4 g_spot_angle2;
-float4 g_spot_angle3;
-float4 g_spot_param1;
-float4 g_spot_param2;
-float4 g_spot_param3;
+float4 g_CameraParam : register(c193);
+float4x4 g_Proj : register(c4);
+float4 g_TargetUvParam : register(c194);
+sampler g_Z_sampler : register(s0);
+float4 g_spotLightPos1 : register(c174);
+float4 g_spotLightPos2 : register(c177);
+float4 g_spotLightPos3 : register(c180);
+float4 g_spot_angle1 : register(c175);
+float4 g_spot_angle2 : register(c178);
+float4 g_spot_angle3 : register(c181);
+float4 g_spot_param1 : register(c176);
+float4 g_spot_param2 : register(c179);
+float4 g_spot_param3 : register(c182);
 
 float4 main(float2 texcoord : TEXCOORD) : COLOR
 {

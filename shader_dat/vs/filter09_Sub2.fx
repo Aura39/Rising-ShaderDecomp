@@ -1,4 +1,4 @@
-float4 g_RenderParam;
+float4 g_RenderParam : register(c184);
 
 struct VS_IN
 {

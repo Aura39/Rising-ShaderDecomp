@@ -1,5 +1,5 @@
-float4x4 g_WorldView;
-float4x4 g_WorldViewProjMatrix;
+float4x4 g_WorldView : register(c20);
+float4x4 g_WorldViewProjMatrix : register(c24);
 
 struct VS_OUT
 {

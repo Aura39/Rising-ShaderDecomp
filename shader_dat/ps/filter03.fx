@@ -1,4 +1,4 @@
-sampler g_SamplerTexture;
+sampler g_SamplerTexture : register(s0);
 
 float4 main() : COLOR
 {

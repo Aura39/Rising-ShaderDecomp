@@ -1,8 +1,8 @@
-float4 g_MatrialColor;
-sampler g_Sampler0;
-float g_SetColor;
-float g_SetNormal;
-float g_SetTangent;
+float4 g_MatrialColor : register(c192);
+sampler g_Sampler0 : register(s0);
+float g_SetColor : register(c189);
+float g_SetNormal : register(c190);
+float g_SetTangent : register(c191);
 
 struct PS_IN
 {

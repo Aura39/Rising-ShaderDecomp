@@ -1,12 +1,12 @@
-float2 g_BlueOffset;
-float4 g_Color;
-float4 g_ColorAddRate;
-float2 g_GreenOffset;
-float2 g_HalfPixel;
-float2 g_RedOffset;
-float4 g_TexValidRate;
-float4x4 g_ViewProjMatrix;
-float4x4 g_WorldMatrix;
+float2 g_BlueOffset : register(c65);
+float4 g_Color : register(c62);
+float4 g_ColorAddRate : register(c68);
+float2 g_GreenOffset : register(c64);
+float2 g_HalfPixel : register(c66);
+float2 g_RedOffset : register(c63);
+float4 g_TexValidRate : register(c67);
+float4x4 g_ViewProjMatrix : register(c54);
+float4x4 g_WorldMatrix : register(c58);
 
 struct VS_IN
 {

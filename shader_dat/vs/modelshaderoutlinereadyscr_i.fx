@@ -1,4 +1,4 @@
-float4x4 g_ViewProj;
+float4x4 g_ViewProj : register(c8);
 
 struct VS_IN
 {

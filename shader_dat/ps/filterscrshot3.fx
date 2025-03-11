@@ -1,11 +1,11 @@
-float4 g_MatrialColor;
-sampler g_Sampler0;
-sampler g_Sampler1;
-sampler g_Sampler2;
-sampler g_Sampler3;
-float g_constant_range;
-float g_dv_range;
-float g_eff_range;
+float4 g_MatrialColor : register(c184);
+sampler g_Sampler0 : register(s0);
+sampler g_Sampler1 : register(s1);
+sampler g_Sampler2 : register(s2);
+sampler g_Sampler3 : register(s3);
+float g_constant_range : register(c185);
+float g_dv_range : register(c187);
+float g_eff_range : register(c186);
 
 float4 main(float2 texcoord : TEXCOORD) : COLOR
 {

@@ -1,4 +1,4 @@
-sampler g_Sampler;
+sampler g_Sampler : register(s0);
 
 float4 main(float2 texcoord : TEXCOORD) : COLOR
 {

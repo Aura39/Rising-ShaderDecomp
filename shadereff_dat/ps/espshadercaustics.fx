@@ -1,9 +1,9 @@
-float4x4 g_InvViewProjMatrix;
-float4 g_MatrialColor;
-float4 g_Rate;
-sampler g_Sampler0;
-sampler g_Sampler1;
-float4 g_TargetUvParam;
+float4x4 g_InvViewProjMatrix : register(c28);
+float4 g_MatrialColor : register(c184);
+float4 g_Rate : register(c185);
+sampler g_Sampler0 : register(s0);
+sampler g_Sampler1 : register(s1);
+float4 g_TargetUvParam : register(c194);
 
 struct PS_IN
 {

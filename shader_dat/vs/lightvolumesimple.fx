@@ -1,4 +1,4 @@
-float4x4 g_WorldViewProj;
+float4x4 g_WorldViewProj : register(c24);
 
 struct VS_OUT
 {

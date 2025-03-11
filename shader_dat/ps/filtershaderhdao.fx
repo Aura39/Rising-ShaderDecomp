@@ -1,12 +1,12 @@
-float g_AcceptAngle;
-float g_AcceptDepth;
-float g_CheckRadius;
-float g_Intensity;
-float g_MaxRate;
-float4 g_ProjParam;
-float g_RejectDepth;
-sampler g_SamplerTexture;
-float2 g_ScreenParam;
+float g_AcceptAngle : register(c179);
+float g_AcceptDepth : register(c177);
+float g_CheckRadius : register(c175);
+float g_Intensity : register(c178);
+float g_MaxRate : register(c180);
+float4 g_ProjParam : register(c174);
+float g_RejectDepth : register(c176);
+sampler g_SamplerTexture : register(s0);
+float2 g_ScreenParam : register(c181);
 
 struct PS_OUT
 {

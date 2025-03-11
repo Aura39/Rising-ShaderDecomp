@@ -1,16 +1,16 @@
-float4 g_CameraParam;
-float3 g_CameraPos;
-float4 g_DebugPow;
-float4 g_Leap;
-float4 g_Mie2;
-float4x4 g_Proj;
-float4 g_Ray2;
-float3 g_RayMie;
-sampler g_SamplerTexture;
-float4 g_SunCol;
-float3 g_SunDir;
-float4x4 view;
-float4x4 viewInverseMatrix;
+float4 g_CameraParam : register(c193);
+float3 g_CameraPos : register(c185);
+float4 g_DebugPow : register(c192);
+float4 g_Leap : register(c191);
+float4 g_Mie2 : register(c190);
+float4x4 g_Proj : register(c4);
+float4 g_Ray2 : register(c189);
+float3 g_RayMie : register(c188);
+sampler g_SamplerTexture : register(s0);
+float4 g_SunCol : register(c187);
+float3 g_SunDir : register(c186);
+float4x4 view : register(c0);
+float4x4 viewInverseMatrix : register(c12);
 
 struct PS_IN
 {

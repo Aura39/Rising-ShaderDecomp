@@ -1,8 +1,8 @@
-float4 g_CameraParam;
-sampler g_Sampler0;
-sampler g_Sampler1;
-float4 g_TargetUvParam;
-float4 g_param;
+float4 g_CameraParam : register(c193);
+sampler g_Sampler0 : register(s0);
+sampler g_Sampler1 : register(s1);
+float4 g_TargetUvParam : register(c194);
+float4 g_param : register(c184);
 
 float4 main(float2 texcoord : TEXCOORD) : COLOR
 {

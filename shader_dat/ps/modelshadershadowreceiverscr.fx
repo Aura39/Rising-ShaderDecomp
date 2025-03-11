@@ -1,4 +1,4 @@
-sampler Shadow_Tex_sampler;
+sampler Shadow_Tex_sampler : register(s7);
 
 struct PS_IN
 {

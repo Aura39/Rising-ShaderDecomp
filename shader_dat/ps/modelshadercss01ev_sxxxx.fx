@@ -1,10 +1,10 @@
-sampler Color_1_sampler;
-float4 ambient_rate;
-float4 ambient_rate_rate;
-float3 fog;
-float4 g_All_Offset;
-float4 prefogcolor_enhance;
-float4 sectionParam;
+sampler Color_1_sampler : register(s0);
+float4 ambient_rate : register(c40);
+float4 ambient_rate_rate : register(c71);
+float3 fog : register(c67);
+float4 g_All_Offset : register(c76);
+float4 prefogcolor_enhance : register(c77);
+float4 sectionParam : register(c41);
 
 struct PS_IN
 {

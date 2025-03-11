@@ -1,14 +1,14 @@
-sampler Color_1_sampler;
-float4 SoftPt_Rate;
-float4 ambient_rate;
-float3 fog;
-float4 g_CameraParam;
-float4 g_TargetUvParam;
-sampler g_Z_sampler;
-float4 light_Color;
-float4 lightpos;
-float4 prefogcolor_enhance;
-float4 specularParam;
+sampler Color_1_sampler : register(s0);
+float4 SoftPt_Rate : register(c44);
+float4 ambient_rate : register(c40);
+float3 fog : register(c67);
+float4 g_CameraParam : register(c193);
+float4 g_TargetUvParam : register(c194);
+sampler g_Z_sampler : register(s13);
+float4 light_Color : register(c61);
+float4 lightpos : register(c62);
+float4 prefogcolor_enhance : register(c77);
+float4 specularParam : register(c41);
 
 struct PS_IN
 {

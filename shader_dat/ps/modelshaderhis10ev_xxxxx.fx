@@ -1,20 +1,20 @@
-sampler Color_1_sampler;
-float4 HologramBaseColor;
-float4 HologramVelvetColor;
-float4 Incidence_param;
-float4 ambient_rate;
-float4 ambient_rate_rate;
-float3 fog;
-float4 g_All_Offset;
-float4 g_NormalWeightParam;
-float4 g_WeightParam;
-sampler incidence_sampler;
-float4 lightpos;
-sampler normalmap1_sampler;
-sampler normalmap2_sampler;
-float4 prefogcolor_enhance;
-float4 tile;
-sampler weightmap1_sampler;
+sampler Color_1_sampler : register(s0);
+float4 HologramBaseColor : register(c44);
+float4 HologramVelvetColor : register(c45);
+float4 Incidence_param : register(c43);
+float4 ambient_rate : register(c40);
+float4 ambient_rate_rate : register(c71);
+float3 fog : register(c67);
+float4 g_All_Offset : register(c76);
+float4 g_NormalWeightParam : register(c182);
+float4 g_WeightParam : register(c181);
+sampler incidence_sampler : register(s4);
+float4 lightpos : register(c62);
+sampler normalmap1_sampler : register(s1);
+sampler normalmap2_sampler : register(s2);
+float4 prefogcolor_enhance : register(c77);
+float4 tile : register(c46);
+sampler weightmap1_sampler : register(s3);
 
 struct PS_IN
 {

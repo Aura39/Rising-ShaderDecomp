@@ -1,5 +1,5 @@
-float4 g_Rate;
-sampler g_Sampler0;
+float4 g_Rate : register(c185);
+sampler g_Sampler0 : register(s0);
 
 struct PS_IN
 {

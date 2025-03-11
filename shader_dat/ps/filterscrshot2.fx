@@ -1,8 +1,8 @@
-sampler g_Sampler0;
-float g_add_alpha;
-float g_color_saido;
-float g_tone_ed;
-float g_tone_st;
+sampler g_Sampler0 : register(s0);
+float g_add_alpha : register(c184);
+float g_color_saido : register(c185);
+float g_tone_ed : register(c187);
+float g_tone_st : register(c186);
 
 float4 main(float2 texcoord : TEXCOORD) : COLOR
 {

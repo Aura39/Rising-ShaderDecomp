@@ -1,10 +1,10 @@
-float4x4 Rmodelview;
-float4 g_All_Offset;
-float4 g_BlurParam;
-float4x4 g_OldViewProjection;
-float4x4 proj;
-float4x4 viewInverseMatrix;
-float4x4 worldMatrix;
+float4x4 Rmodelview : register(c20);
+float4 g_All_Offset : register(c46);
+float4 g_BlurParam : register(c184);
+float4x4 g_OldViewProjection : register(c36);
+float4x4 proj : register(c4);
+float4x4 viewInverseMatrix : register(c12);
+float4x4 worldMatrix : register(c16);
 
 struct VS_IN
 {

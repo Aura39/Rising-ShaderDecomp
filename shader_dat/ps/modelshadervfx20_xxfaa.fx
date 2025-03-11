@@ -1,19 +1,19 @@
-sampler Color_1_sampler;
-float4 CubeParam;
-float4 Refract_Param;
-float4 SoftPt_Rate;
-float4 ambient_rate;
-float4 finalcolor_enhance;
-float3 fog;
-float4 g_CameraParam;
-float4 g_TargetUvParam;
-sampler g_Z_sampler;
-float4 lightpos;
-sampler nkiMask_sampler;
-float4 nkiTile;
-sampler normalmap_sampler;
-float4 prefogcolor_enhance;
-float4 tile;
+sampler Color_1_sampler : register(s0);
+float4 CubeParam : register(c42);
+float4 Refract_Param : register(c43);
+float4 SoftPt_Rate : register(c44);
+float4 ambient_rate : register(c40);
+float4 finalcolor_enhance : register(c78);
+float3 fog : register(c67);
+float4 g_CameraParam : register(c193);
+float4 g_TargetUvParam : register(c194);
+sampler g_Z_sampler : register(s13);
+float4 lightpos : register(c62);
+sampler nkiMask_sampler : register(s3);
+float4 nkiTile : register(c46);
+sampler normalmap_sampler : register(s2);
+float4 prefogcolor_enhance : register(c77);
+float4 tile : register(c45);
 
 struct PS_IN
 {

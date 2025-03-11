@@ -1,11 +1,11 @@
-float g_Bright;
-float g_DistortionScale;
-sampler g_NormalSampler;
-float3 g_NormalScale;
-sampler g_SceneSampler;
-float4 g_TargetUvParam;
-float3 g_lightCol;
-float3 g_lihtdir;
+float g_Bright : register(c188);
+float g_DistortionScale : register(c184);
+sampler g_NormalSampler : register(s10);
+float3 g_NormalScale : register(c185);
+sampler g_SceneSampler : register(s0);
+float4 g_TargetUvParam : register(c194);
+float3 g_lightCol : register(c187);
+float3 g_lihtdir : register(c186);
 
 float4 main(float2 texcoord : TEXCOORD) : COLOR
 {

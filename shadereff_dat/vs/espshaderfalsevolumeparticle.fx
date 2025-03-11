@@ -1,8 +1,8 @@
-float4 g_Ambient;
-float4 g_LightDirection;
-float4 g_MatrialColor;
-float4x4 g_WorldMatrix;
-float4x4 g_WorldViewProjMatrix;
+float4 g_Ambient : register(c186);
+float4 g_LightDirection : register(c185);
+float4 g_MatrialColor : register(c184);
+float4x4 g_WorldMatrix : register(c16);
+float4x4 g_WorldViewProjMatrix : register(c24);
 
 struct VS_IN
 {

@@ -1,8 +1,8 @@
-sampler g_Sampler0;
-float4 g_TexelWeights0;
-float4 g_TexelWeights1;
-float2 g_TotalOffset;
-float4 g_offsetPow;
+sampler g_Sampler0 : register(s13);
+float4 g_TexelWeights0 : register(c184);
+float4 g_TexelWeights1 : register(c185);
+float2 g_TotalOffset : register(c186);
+float4 g_offsetPow : register(c187);
 
 struct PS_IN
 {

@@ -1,10 +1,10 @@
-sampler Color_1_sampler;
-float4 CubeParam;
-float4 SoftPt_Rate;
-float4 ambient_rate;
-samplerCUBE cubemap_sampler;
-float3 fog;
-float4 prefogcolor_enhance;
+sampler Color_1_sampler : register(s0);
+float4 CubeParam : register(c42);
+float4 SoftPt_Rate : register(c44);
+float4 ambient_rate : register(c40);
+samplerCUBE cubemap_sampler : register(s1);
+float3 fog : register(c67);
+float4 prefogcolor_enhance : register(c77);
 
 struct PS_IN
 {

@@ -1,8 +1,8 @@
-sampler g_Sampler0;
-float4 g_colorEnm;
-float4 g_colorObj;
-float4 g_colorScr;
-float2 g_offset;
+sampler g_Sampler0 : register(s0);
+float4 g_colorEnm : register(c188);
+float4 g_colorObj : register(c187);
+float4 g_colorScr : register(c189);
+float2 g_offset : register(c184);
 
 float4 main(float2 texcoord : TEXCOORD) : COLOR
 {

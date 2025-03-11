@@ -1,9 +1,9 @@
-float2 g_HalfPixel;
-float2 g_RedOffset;
-float2 g_UVOffset;
-float4x4 g_ViewProjMatrix;
-float4x4 g_WorldMatrix;
-float g_ZSortOffset;
+float2 g_HalfPixel : register(c64);
+float2 g_RedOffset : register(c69);
+float2 g_UVOffset : register(c63);
+float4x4 g_ViewProjMatrix : register(c54);
+float4x4 g_WorldMatrix : register(c58);
+float g_ZSortOffset : register(c68);
 
 struct VS_IN
 {

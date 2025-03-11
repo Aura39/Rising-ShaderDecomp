@@ -1,12 +1,12 @@
-float4 g_CameraParam;
-float4 g_MatrialColor;
-float4 g_Rate;
-sampler g_Sampler0;
-sampler g_Sampler1;
-sampler g_Sampler2;
-sampler g_Sampler3;
-float4 g_SoftPTParameter;
-float4 g_TargetUvParam;
+float4 g_CameraParam : register(c193);
+float4 g_MatrialColor : register(c184);
+float4 g_Rate : register(c185);
+sampler g_Sampler0 : register(s0);
+sampler g_Sampler1 : register(s1);
+sampler g_Sampler2 : register(s2);
+sampler g_Sampler3 : register(s3);
+float4 g_SoftPTParameter : register(c186);
+float4 g_TargetUvParam : register(c194);
 
 struct PS_IN
 {

@@ -1,7 +1,7 @@
-float4 SoftPt_Rate;
-float4 ambient_rate;
-float3 fog;
-float4 prefogcolor_enhance;
+float4 SoftPt_Rate : register(c44);
+float4 ambient_rate : register(c40);
+float3 fog : register(c67);
+float4 prefogcolor_enhance : register(c77);
 
 struct PS_IN
 {

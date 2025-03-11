@@ -1,6 +1,6 @@
-float4 g_BlurParam;
-samplerCUBE g_CubeSampler;
-float4 g_cubeParam;
+float4 g_BlurParam : register(c184);
+samplerCUBE g_CubeSampler : register(s4);
+float4 g_cubeParam : register(c42);
 
 struct PS_IN
 {

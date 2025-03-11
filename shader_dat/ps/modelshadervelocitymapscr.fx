@@ -1,4 +1,4 @@
-float4 g_BlurParam;
+float4 g_BlurParam : register(c184);
 
 struct PS_IN
 {

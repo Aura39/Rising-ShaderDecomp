@@ -1,7 +1,7 @@
-float4 g_All_Offset;
-float4 g_BlurParam;
-sampler g_Color_1_sampler;
-float4 g_ambientRate;
+float4 g_All_Offset : register(c49);
+float4 g_BlurParam : register(c184);
+sampler g_Color_1_sampler : register(s0);
+float4 g_ambientRate : register(c191);
 
 struct PS_IN
 {

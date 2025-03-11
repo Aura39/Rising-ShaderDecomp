@@ -1,10 +1,10 @@
-sampler Color_1_sampler;
-float4 SoftPt_Rate;
-float4 ambient_rate;
-float3 fog;
-sampler nkiMask_sampler;
-float4 nkiTile;
-float4 prefogcolor_enhance;
+sampler Color_1_sampler : register(s0);
+float4 SoftPt_Rate : register(c44);
+float4 ambient_rate : register(c40);
+float3 fog : register(c67);
+sampler nkiMask_sampler : register(s3);
+float4 nkiTile : register(c46);
+float4 prefogcolor_enhance : register(c77);
 
 struct PS_IN
 {

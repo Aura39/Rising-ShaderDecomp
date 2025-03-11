@@ -1,9 +1,9 @@
-float4 g_MatrialColor;
-float4 g_Rate;
-sampler g_Sampler0;
-sampler g_Sampler1;
-samplerCUBE g_Sampler2;
-float4x4 g_WorldMatrix_pix;
+float4 g_MatrialColor : register(c184);
+float4 g_Rate : register(c186);
+sampler g_Sampler0 : register(s0);
+sampler g_Sampler1 : register(s1);
+samplerCUBE g_Sampler2 : register(s2);
+float4x4 g_WorldMatrix_pix : register(c16);
 
 struct PS_IN
 {

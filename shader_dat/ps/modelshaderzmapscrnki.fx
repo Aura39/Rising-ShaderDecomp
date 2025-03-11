@@ -1,8 +1,8 @@
-float4 g_CameraParam;
-float4x4 g_Proj;
-sampler g_Sampler0;
-float4 g_preFogColor;
-float4 g_uvOffset;
+float4 g_CameraParam : register(c193);
+float4x4 g_Proj : register(c4);
+sampler g_Sampler0 : register(s0);
+float4 g_preFogColor : register(c185);
+float4 g_uvOffset : register(c184);
 
 struct PS_IN
 {

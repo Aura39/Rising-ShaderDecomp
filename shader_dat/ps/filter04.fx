@@ -1,7 +1,7 @@
-sampler ColorTableTexture;
-float4 g_MatrialColor;
-float4 g_Saido;
-sampler g_SamplerTexture;
+sampler ColorTableTexture : register(s1);
+float4 g_MatrialColor : register(c184);
+float4 g_Saido : register(c185);
+sampler g_SamplerTexture : register(s0);
 
 float4 main(float2 texcoord : TEXCOORD) : COLOR
 {

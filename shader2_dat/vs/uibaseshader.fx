@@ -1,12 +1,12 @@
-float4 g_Color;
-float4 g_ColorAddRate;
-float2 g_HalfPixel;
-float4 g_TexValidRate;
-float2 g_UVOffset;
-float4x4 g_ViewProjMatrix;
-float4x3 g_WorldMatrix;
-float g_ZSortOffset;
-float4 g_param;
+float4 g_Color : register(c218);
+float4 g_ColorAddRate : register(c222);
+float2 g_HalfPixel : register(c220);
+float4 g_TexValidRate : register(c221);
+float2 g_UVOffset : register(c219);
+float4x4 g_ViewProjMatrix : register(c54);
+float4x3 g_WorldMatrix : register(c58);
+float g_ZSortOffset : register(c224);
+float4 g_param : register(c223);
 
 struct VS_IN
 {

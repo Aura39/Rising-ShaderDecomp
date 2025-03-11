@@ -1,6 +1,6 @@
-float4x4 Rmodelview;
-float4 g_CameraParam;
-float4x4 proj;
+float4x4 Rmodelview : register(c20);
+float4 g_CameraParam : register(c193);
+float4x4 proj : register(c4);
 
 struct VS_IN
 {

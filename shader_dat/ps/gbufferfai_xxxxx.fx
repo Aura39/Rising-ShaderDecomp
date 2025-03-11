@@ -1,19 +1,19 @@
-float4 Incidence_param;
-float4 g_All_Offset;
-float4 g_BlurParam;
-sampler g_Color_1_sampler;
-float4 g_NormalWeightParam;
-sampler g_Normalmap2_sampler;
-sampler g_Normalmap_sampler;
-sampler g_OcclusionSampler;
-float4 g_WeightParam;
-float4 g_ambientRate;
-sampler g_incidence_sampler;
-float3 g_lightDir;
-float4 g_normalmapRate;
-float4 g_otherParam;
-float4 g_specParam;
-sampler g_wightmap_sampler;
+float4 Incidence_param : register(c187);
+float4 g_All_Offset : register(c49);
+float4 g_BlurParam : register(c184);
+sampler g_Color_1_sampler : register(s0);
+float4 g_NormalWeightParam : register(c182);
+sampler g_Normalmap2_sampler : register(s6);
+sampler g_Normalmap_sampler : register(s4);
+sampler g_OcclusionSampler : register(s2);
+float4 g_WeightParam : register(c181);
+float4 g_ambientRate : register(c191);
+sampler g_incidence_sampler : register(s8);
+float3 g_lightDir : register(c46);
+float4 g_normalmapRate : register(c44);
+float4 g_otherParam : register(c45);
+float4 g_specParam : register(c41);
+sampler g_wightmap_sampler : register(s7);
 
 struct PS_IN
 {

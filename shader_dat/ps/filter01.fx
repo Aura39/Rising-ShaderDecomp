@@ -1,7 +1,7 @@
-float4 g_GlareColor1;
-float4 g_GlareColor2;
-float4 g_MatrialColor;
-sampler g_SamplerTexture;
+float4 g_GlareColor1 : register(c185);
+float4 g_GlareColor2 : register(c186);
+float4 g_MatrialColor : register(c184);
+sampler g_SamplerTexture : register(s0);
 
 float4 main(float2 texcoord : TEXCOORD) : COLOR
 {

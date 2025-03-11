@@ -1,14 +1,14 @@
-float4 fogParam;
-float4x4 g_Proj;
-float4x4 g_ShadowView;
-float4x4 g_ShadowViewProj;
-float4x4 g_ViewInverseMatrix;
-float4x4 g_WorldMatrix;
-float4x4 g_WorldView;
-float4 muzzle_light;
-float4 muzzle_lightpos;
-float4 point_light1;
-float4 point_lightpos1;
+float4 fogParam : register(c184);
+float4x4 g_Proj : register(c4);
+float4x4 g_ShadowView : register(c32);
+float4x4 g_ShadowViewProj : register(c28);
+float4x4 g_ViewInverseMatrix : register(c12);
+float4x4 g_WorldMatrix : register(c16);
+float4x4 g_WorldView : register(c20);
+float4 muzzle_light : register(c190);
+float4 muzzle_lightpos : register(c191);
+float4 point_light1 : register(c188);
+float4 point_lightpos1 : register(c189);
 
 struct VS_IN
 {

@@ -1,13 +1,13 @@
-float4 SoftPt_Rate;
-float4 ambient_rate;
-float4 finalcolor_enhance;
-float3 fog;
-float4 g_CameraParam;
-float4 g_TargetUvParam;
-float4 g_WtrFogColor;
-float4 g_WtrFogParam;
-sampler g_Z_sampler;
-float4 prefogcolor_enhance;
+float4 SoftPt_Rate : register(c44);
+float4 ambient_rate : register(c40);
+float4 finalcolor_enhance : register(c78);
+float3 fog : register(c67);
+float4 g_CameraParam : register(c193);
+float4 g_TargetUvParam : register(c194);
+float4 g_WtrFogColor : register(c46);
+float4 g_WtrFogParam : register(c45);
+sampler g_Z_sampler : register(s13);
+float4 prefogcolor_enhance : register(c77);
 
 struct PS_IN
 {

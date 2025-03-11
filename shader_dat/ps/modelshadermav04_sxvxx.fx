@@ -1,15 +1,15 @@
-sampler Color_1_sampler;
-sampler Shadow_Tex_sampler;
-float3 ambient_rate;
-float4 ambient_rate_rate;
-float3 fog;
-float4 fogParam;
-float4 g_All_Offset;
-float g_ShadowUse;
-float4 g_TargetUvParam;
-float4 light_Color;
-float4 lightpos;
-float4 prefogcolor_enhance;
+sampler Color_1_sampler : register(s0);
+sampler Shadow_Tex_sampler : register(s11);
+float3 ambient_rate : register(c40);
+float4 ambient_rate_rate : register(c57);
+float3 fog : register(c53);
+float4 fogParam : register(c54);
+float4 g_All_Offset : register(c60);
+float g_ShadowUse : register(c180);
+float4 g_TargetUvParam : register(c194);
+float4 light_Color : register(c47);
+float4 lightpos : register(c48);
+float4 prefogcolor_enhance : register(c61);
 
 struct PS_IN
 {

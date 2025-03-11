@@ -1,5 +1,5 @@
-float g_ProjZ;
-float4 g_TargetUvParam;
+float g_ProjZ : register(c190);
+float4 g_TargetUvParam : register(c194);
 
 struct VS_IN
 {

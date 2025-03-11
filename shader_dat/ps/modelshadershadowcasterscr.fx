@@ -1,4 +1,4 @@
-float g_ShadowFarInv;
+float g_ShadowFarInv : register(c184);
 
 float4 main(float3 texcoord1 : TEXCOORD1) : COLOR
 {

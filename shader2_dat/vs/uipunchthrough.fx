@@ -1,8 +1,8 @@
-float4 g_Threshold;
-float4x4 g_ViewProjMatrix;
-float4x4 g_WorldMatrix;
-float4 g_color;
-float2 g_halfPixel;
+float4 g_Threshold : register(c65);
+float4x4 g_ViewProjMatrix : register(c54);
+float4x4 g_WorldMatrix : register(c58);
+float4 g_color : register(c62);
+float2 g_halfPixel : register(c64);
 
 struct VS_IN
 {

@@ -1,8 +1,8 @@
-float4 g_MatrialColor;
-sampler g_Sampler0;
-sampler g_Sampler1;
-float4 g_UvParam0;
-float4 g_UvParam1;
+float4 g_MatrialColor : register(c184);
+sampler g_Sampler0 : register(s0);
+sampler g_Sampler1 : register(s1);
+float4 g_UvParam0 : register(c186);
+float4 g_UvParam1 : register(c187);
 
 float4 main(float2 texcoord : TEXCOORD) : COLOR
 {

@@ -1,9 +1,9 @@
-float4 g_All_Offset_vs;
-float4 g_BlurParam;
-float4x4 g_OldViewProjection;
-float4 g_normalmapRate_vs;
-float4x4 proj;
-float4x4 view;
+float4 g_All_Offset_vs : register(c185);
+float4 g_BlurParam : register(c184);
+float4x4 g_OldViewProjection : register(c36);
+float4 g_normalmapRate_vs : register(c186);
+float4x4 proj : register(c4);
+float4x4 view : register(c0);
 
 struct VS_IN
 {

@@ -1,6 +1,6 @@
-float4 fogParam;
-float4x4 g_Proj;
-float4x4 g_WorldView;
+float4 fogParam : register(c184);
+float4x4 g_Proj : register(c4);
+float4x4 g_WorldView : register(c20);
 
 struct VS_IN
 {

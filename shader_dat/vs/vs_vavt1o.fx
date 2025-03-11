@@ -1,10 +1,10 @@
-float4 fogParam;
-float4 g_All_Offset;
-float4 g_All_OffsetSp;
-float4x4 g_Proj;
-float4x4 g_WorldView;
-float4 g_randSeed;
-float4 g_randSeed2;
+float4 fogParam : register(c184);
+float4 g_All_Offset : register(c185);
+float4 g_All_OffsetSp : register(c186);
+float4x4 g_Proj : register(c4);
+float4x4 g_WorldView : register(c20);
+float4 g_randSeed : register(c190);
+float4 g_randSeed2 : register(c191);
 
 struct VS_IN
 {

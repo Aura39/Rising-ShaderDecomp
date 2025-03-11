@@ -1,21 +1,21 @@
-sampler g_AlbedoSampler;
-float4 g_CameraParam;
-sampler g_NormalSampler;
-sampler g_NormalSampler2;
-float4x4 g_Proj;
-sampler g_ShadowSampler;
-sampler g_SignSampler;
-sampler g_SpecMaskSampler;
-sampler g_SpecPowSampler;
-float4 g_SpotLightCol;
-float4 g_SpotLightPos;
-float4 g_TargetUvParam;
-sampler g_ZSampler;
-float4 g_lightHosei;
-float4 g_lightHosei2;
-float4 g_otherParam;
-float4 g_spot_angle;
-float4 g_spot_param;
+sampler g_AlbedoSampler : register(s0);
+float4 g_CameraParam : register(c193);
+sampler g_NormalSampler : register(s1);
+sampler g_NormalSampler2 : register(s8);
+float4x4 g_Proj : register(c4);
+sampler g_ShadowSampler : register(s6);
+sampler g_SignSampler : register(s7);
+sampler g_SpecMaskSampler : register(s2);
+sampler g_SpecPowSampler : register(s3);
+float4 g_SpotLightCol : register(c185);
+float4 g_SpotLightPos : register(c184);
+float4 g_TargetUvParam : register(c194);
+sampler g_ZSampler : register(s5);
+float4 g_lightHosei : register(c174);
+float4 g_lightHosei2 : register(c175);
+float4 g_otherParam : register(c188);
+float4 g_spot_angle : register(c186);
+float4 g_spot_param : register(c187);
 
 float4 main(float4 texcoord : TEXCOORD) : COLOR
 {

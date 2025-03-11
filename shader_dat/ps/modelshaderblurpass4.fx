@@ -1,10 +1,10 @@
-sampler g_AmbientSampler;
-sampler g_LightSampler;
-float4 g_MatrialColor;
-sampler g_ZSampler;
-float3 g_fogCol;
-float4 g_fogParam;
-float4 g_preFogEnhanceColor;
+sampler g_AmbientSampler : register(s0);
+sampler g_LightSampler : register(s1);
+float4 g_MatrialColor : register(c185);
+sampler g_ZSampler : register(s2);
+float3 g_fogCol : register(c190);
+float4 g_fogParam : register(c191);
+float4 g_preFogEnhanceColor : register(c184);
 
 float4 main(float2 texcoord : TEXCOORD) : COLOR
 {

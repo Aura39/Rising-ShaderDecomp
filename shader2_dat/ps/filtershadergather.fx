@@ -1,10 +1,10 @@
-sampler ColorTableTexture;
-float4 g_AddColor;
-float4 g_BloomColor;
-float4 g_Brightness;
-float4 g_MulColor;
-float4 g_Saido;
-sampler g_Sampler;
+sampler ColorTableTexture : register(s2);
+float4 g_AddColor : register(c185);
+float4 g_BloomColor : register(c187);
+float4 g_Brightness : register(c188);
+float4 g_MulColor : register(c184);
+float4 g_Saido : register(c186);
+sampler g_Sampler : register(s0);
 
 float4 main(float2 texcoord : TEXCOORD) : COLOR
 {

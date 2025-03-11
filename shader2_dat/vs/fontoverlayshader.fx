@@ -1,9 +1,9 @@
-float4 g_Color;
-float2 g_HalfPixel;
-float4x4 g_ViewProjMatrix;
-float4x4 g_WorldMatrix;
-float2 g_addPos;
-float3 g_param;
+float4 g_Color : register(c62);
+float2 g_HalfPixel : register(c63);
+float4x4 g_ViewProjMatrix : register(c54);
+float4x4 g_WorldMatrix : register(c58);
+float2 g_addPos : register(c64);
+float3 g_param : register(c65);
 
 struct VS_IN
 {

@@ -1,18 +1,18 @@
-sampler Color_1_sampler;
-float4 CubeParam;
-sampler RefractMap_sampler;
-float4 Refract_Param;
-float4 SoftPt_Rate;
-float4 ambient_rate;
-samplerCUBE cubemap_sampler;
-float4 finalcolor_enhance;
-float3 fog;
-float4 g_TargetUvParam;
-float4 lightpos;
-sampler normalmap_sampler;
-float4 prefogcolor_enhance;
-float4 tile;
-float4x4 viewInverseMatrix;
+sampler Color_1_sampler : register(s0);
+float4 CubeParam : register(c42);
+sampler RefractMap_sampler : register(s12);
+float4 Refract_Param : register(c43);
+float4 SoftPt_Rate : register(c44);
+float4 ambient_rate : register(c40);
+samplerCUBE cubemap_sampler : register(s1);
+float4 finalcolor_enhance : register(c78);
+float3 fog : register(c67);
+float4 g_TargetUvParam : register(c194);
+float4 lightpos : register(c62);
+sampler normalmap_sampler : register(s2);
+float4 prefogcolor_enhance : register(c77);
+float4 tile : register(c45);
+float4x4 viewInverseMatrix : register(c12);
 
 struct PS_IN
 {

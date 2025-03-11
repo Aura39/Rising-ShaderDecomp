@@ -1,9 +1,9 @@
-float4 g_Color;
-sampler g_Sampler0;
-sampler g_Sampler1;
-sampler g_Sampler2;
-sampler g_Sampler3;
-float4 g_ToneMapParam;
+float4 g_Color : register(c62);
+sampler g_Sampler0 : register(s11);
+sampler g_Sampler1 : register(s12);
+sampler g_Sampler2 : register(s13);
+sampler g_Sampler3 : register(s14);
+float4 g_ToneMapParam : register(c65);
 
 struct PS_IN
 {

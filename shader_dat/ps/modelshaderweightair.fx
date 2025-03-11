@@ -1,14 +1,14 @@
-float4 g_Ambient;
-float4 g_Env;
-float4 g_MatrialColor;
-float4 g_Mie;
-float4 g_Rayleigh;
-sampler g_Sampler0;
-float g_SetColor;
-float g_SetNormal;
-float g_SetTangent;
-float4 g_Sun;
-float4 g_Sun2Col;
+float4 g_Ambient : register(c189);
+float4 g_Env : register(c188);
+float4 g_MatrialColor : register(c192);
+float4 g_Mie : register(c186);
+float4 g_Rayleigh : register(c185);
+sampler g_Sampler0 : register(s0);
+float g_SetColor : register(c190);
+float g_SetNormal : register(c191);
+float g_SetTangent : register(c184);
+float4 g_Sun : register(c187);
+float4 g_Sun2Col : register(c183);
 
 struct PS_IN
 {

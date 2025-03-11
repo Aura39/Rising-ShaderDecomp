@@ -1,6 +1,6 @@
-float4 g_Rate;
-sampler g_Sampler0;
-sampler g_Sampler1;
+float4 g_Rate : register(c185);
+sampler g_Sampler0 : register(s0);
+sampler g_Sampler1 : register(s1);
 
 float4 main(float2 texcoord : TEXCOORD) : COLOR
 {

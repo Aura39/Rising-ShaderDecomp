@@ -1,14 +1,14 @@
-sampler g_AlbedoSampler;
-float4 g_CameraParam;
-sampler g_NormalSampler;
-sampler g_SpecMaskSampler;
-sampler g_Z_ShadowSampler;
-sampler g_Z_ShadowSampler2;
-float4 g_finalColor_enhance;
-float4 g_lightCol;
-float4 g_lightDir;
-sampler g_specPow;
-float4 prefogcolor_enhance;
+sampler g_AlbedoSampler : register(s0);
+float4 g_CameraParam : register(c193);
+sampler g_NormalSampler : register(s1);
+sampler g_SpecMaskSampler : register(s2);
+sampler g_Z_ShadowSampler : register(s5);
+sampler g_Z_ShadowSampler2 : register(s6);
+float4 g_finalColor_enhance : register(c188);
+float4 g_lightCol : register(c186);
+float4 g_lightDir : register(c185);
+sampler g_specPow : register(s4);
+float4 prefogcolor_enhance : register(c187);
 
 struct PS_IN
 {

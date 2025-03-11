@@ -1,4 +1,4 @@
-float4 g_MatrialColor;
+float4 g_MatrialColor : register(c62);
 
 float4 main(float4 color : COLOR) : COLOR
 {

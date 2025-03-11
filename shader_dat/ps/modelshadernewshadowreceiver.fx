@@ -1,13 +1,13 @@
-sampler Shadow_Tex_sampler;
-float4 g_CameraParam;
-float4 g_CastTexSize;
-float4x4 g_IView;
-float4 g_ShadowFarInv;
-float4 g_ShadowForWin;
-float4x4 g_ShadowView;
-float4x4 g_ShadowViewProj;
-float4x4 g_ViewProjection;
-sampler g_Z_sampler;
+sampler Shadow_Tex_sampler : register(s11);
+float4 g_CameraParam : register(c193);
+float4 g_CastTexSize : register(c189);
+float4x4 g_IView : register(c12);
+float4 g_ShadowFarInv : register(c184);
+float4 g_ShadowForWin : register(c185);
+float4x4 g_ShadowView : register(c32);
+float4x4 g_ShadowViewProj : register(c28);
+float4x4 g_ViewProjection : register(c8);
+sampler g_Z_sampler : register(s6);
 
 struct PS_IN
 {

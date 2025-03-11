@@ -1,9 +1,9 @@
-float4 g_CenterParam;
-float4 g_ChromaticAberration;
-sampler g_Sampler;
-float4 g_ScaleParam;
-float4 g_WarpParam;
-float4 g_uvHosei;
+float4 g_CenterParam : register(c184);
+float4 g_ChromaticAberration : register(c187);
+sampler g_Sampler : register(s0);
+float4 g_ScaleParam : register(c185);
+float4 g_WarpParam : register(c186);
+float4 g_uvHosei : register(c188);
 
 float4 main(float2 texcoord : TEXCOORD) : COLOR
 {

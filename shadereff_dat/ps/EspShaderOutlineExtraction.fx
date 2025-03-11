@@ -1,8 +1,8 @@
-float4 g_BlendColor;
-float4 g_MatrialColor;
-float4 g_OutLineRate;
-sampler g_Sampler0;
-float4 g_TargetOffSet;
+float4 g_BlendColor : register(c186);
+float4 g_MatrialColor : register(c184);
+float4 g_OutLineRate : register(c185);
+sampler g_Sampler0 : register(s0);
+float4 g_TargetOffSet : register(c187);
 
 float4 main(float4 texcoord : TEXCOORD) : COLOR
 {

@@ -1,12 +1,12 @@
-sampler Color_1_sampler;
-float4 Refract_Param;
-float4 SoftPt_Rate;
-float4 ambient_rate;
-float4 finalcolor_enhance;
-float3 fog;
-sampler normalmap_sampler;
-float4 prefogcolor_enhance;
-float4 tile;
+sampler Color_1_sampler : register(s0);
+float4 Refract_Param : register(c43);
+float4 SoftPt_Rate : register(c44);
+float4 ambient_rate : register(c40);
+float4 finalcolor_enhance : register(c78);
+float3 fog : register(c67);
+sampler normalmap_sampler : register(s2);
+float4 prefogcolor_enhance : register(c77);
+float4 tile : register(c45);
 
 struct PS_IN
 {

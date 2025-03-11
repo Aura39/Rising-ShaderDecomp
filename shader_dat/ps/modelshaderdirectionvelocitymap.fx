@@ -1,7 +1,7 @@
-sampler g_Sampler0;
-float4 g_VecRate;
-float g_maskEnd;
-float g_maskStart;
+sampler g_Sampler0 : register(s0);
+float4 g_VecRate : register(c184);
+float g_maskEnd : register(c186);
+float g_maskStart : register(c185);
 
 float4 main(float2 texcoord : TEXCOORD) : COLOR
 {

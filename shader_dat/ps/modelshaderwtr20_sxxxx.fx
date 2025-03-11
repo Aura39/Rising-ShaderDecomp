@@ -1,16 +1,16 @@
-sampler RefractMap_sampler;
-float4 Refract_Param;
-float4 SoftPt_Rate;
-float4 ambient_rate;
-float4 finalcolor_enhance;
-float3 fog;
-float4 fogParam;
-float4 g_CameraParam;
-float4 g_TargetUvParam;
-float4 g_WtrFogColor;
-float4 g_WtrFogParam;
-sampler g_Z_sampler;
-float4 prefogcolor_enhance;
+sampler RefractMap_sampler : register(s12);
+float4 Refract_Param : register(c43);
+float4 SoftPt_Rate : register(c44);
+float4 ambient_rate : register(c40);
+float4 finalcolor_enhance : register(c64);
+float3 fog : register(c56);
+float4 fogParam : register(c57);
+float4 g_CameraParam : register(c193);
+float4 g_TargetUvParam : register(c194);
+float4 g_WtrFogColor : register(c46);
+float4 g_WtrFogParam : register(c45);
+sampler g_Z_sampler : register(s13);
+float4 prefogcolor_enhance : register(c63);
 
 struct PS_IN
 {

@@ -1,5 +1,5 @@
-float4x4 g_ViewProjMatrix;
-float4x4 g_WorldMatrix;
+float4x4 g_ViewProjMatrix : register(c54);
+float4x4 g_WorldMatrix : register(c58);
 
 float4 main(float4 position : POSITION) : POSITION
 {

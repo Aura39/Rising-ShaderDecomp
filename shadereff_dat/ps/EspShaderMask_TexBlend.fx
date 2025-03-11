@@ -1,8 +1,8 @@
-float4 g_BlendRate;
-float4 g_MatrialColor;
-sampler g_Sampler0;
-sampler g_Sampler1;
-sampler g_Sampler2;
+float4 g_BlendRate : register(c185);
+float4 g_MatrialColor : register(c184);
+sampler g_Sampler0 : register(s0);
+sampler g_Sampler1 : register(s1);
+sampler g_Sampler2 : register(s2);
 
 float4 main(float2 texcoord : TEXCOORD) : COLOR
 {

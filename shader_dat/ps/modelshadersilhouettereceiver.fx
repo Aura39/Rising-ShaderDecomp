@@ -1,7 +1,7 @@
-float4 g_Color;
-sampler g_Sampler1;
-sampler g_Sampler2;
-float4 g_Weight;
+float4 g_Color : register(c186);
+sampler g_Sampler1 : register(s1);
+sampler g_Sampler2 : register(s2);
+float4 g_Weight : register(c187);
 
 float4 main(float4 texcoord : TEXCOORD) : COLOR
 {

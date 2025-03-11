@@ -1,15 +1,15 @@
-float4 g_All_Offset;
-float4 g_ColorEnhance;
-sampler g_Color_1_sampler;
-float4 g_GroundHemisphereColor;
-sampler g_OcclusionSampler;
-float4 g_SkyHemisphereColor;
-float4 g_ambientRate;
-float4 g_cubeParam2;
-float4 g_lightColor;
-float3 g_lightDir;
-float4 g_olcParam;
-float4 g_otherParam;
+float4 g_All_Offset : register(c49);
+float4 g_ColorEnhance : register(c50);
+sampler g_Color_1_sampler : register(s0);
+float4 g_GroundHemisphereColor : register(c190);
+sampler g_OcclusionSampler : register(s2);
+float4 g_SkyHemisphereColor : register(c189);
+float4 g_ambientRate : register(c191);
+float4 g_cubeParam2 : register(c43);
+float4 g_lightColor : register(c47);
+float3 g_lightDir : register(c46);
+float4 g_olcParam : register(c48);
+float4 g_otherParam : register(c45);
 
 struct PS_IN
 {

@@ -1,25 +1,25 @@
-sampler Color_1_sampler;
-float4 CubeParam;
-sampler ShadowCast_Tex_sampler;
-float4 ambient_rate;
-float4 ambient_rate_rate;
-samplerCUBE cubemap_sampler;
-float3 fog;
-float4 g_All_Offset;
-float2 g_ShadowFarInvPs;
-float g_ShadowUse;
-float4 g_TargetUvParam;
-float4 light_Color;
-float4 lightpos;
-float4 muzzle_light;
-float4 muzzle_lightpos;
-sampler normalmap_sampler;
-float4 point_light1;
-float4 point_lightpos1;
-float4 prefogcolor_enhance;
-float4 specularParam;
-float4 tile;
-float4x4 viewInverseMatrix;
+sampler Color_1_sampler : register(s0);
+float4 CubeParam : register(c42);
+sampler ShadowCast_Tex_sampler : register(s10);
+float4 ambient_rate : register(c40);
+float4 ambient_rate_rate : register(c71);
+samplerCUBE cubemap_sampler : register(s3);
+float3 fog : register(c67);
+float4 g_All_Offset : register(c76);
+float2 g_ShadowFarInvPs : register(c182);
+float g_ShadowUse : register(c180);
+float4 g_TargetUvParam : register(c194);
+float4 light_Color : register(c61);
+float4 lightpos : register(c62);
+float4 muzzle_light : register(c69);
+float4 muzzle_lightpos : register(c70);
+sampler normalmap_sampler : register(s4);
+float4 point_light1 : register(c63);
+float4 point_lightpos1 : register(c64);
+float4 prefogcolor_enhance : register(c77);
+float4 specularParam : register(c41);
+float4 tile : register(c43);
+float4x4 viewInverseMatrix : register(c12);
 
 struct PS_IN
 {

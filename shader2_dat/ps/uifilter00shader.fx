@@ -1,6 +1,6 @@
-float4 g_Color;
-float4 g_ColorLimit;
-sampler g_Sampler0;
+float4 g_Color : register(c64);
+float4 g_ColorLimit : register(c65);
+sampler g_Sampler0 : register(s13);
 
 float4 main(float2 texcoord : TEXCOORD) : COLOR
 {

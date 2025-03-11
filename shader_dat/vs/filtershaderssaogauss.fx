@@ -1,8 +1,8 @@
-float4 g_TargetUvParam;
-float4 g_TexelOffsets0;
-float4 g_TexelOffsets1;
-float4 g_TexelOffsets2;
-float4 g_TexelOffsets3;
+float4 g_TargetUvParam : register(c194);
+float4 g_TexelOffsets0 : register(c184);
+float4 g_TexelOffsets1 : register(c185);
+float4 g_TexelOffsets2 : register(c186);
+float4 g_TexelOffsets3 : register(c187);
 
 struct VS_IN
 {

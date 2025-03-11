@@ -1,5 +1,5 @@
-sampler g_Sampler0;
-float4 g_uvOffset;
+sampler g_Sampler0 : register(s0);
+float4 g_uvOffset : register(c185);
 
 float4 main(float2 texcoord1 : TEXCOORD1) : COLOR
 {

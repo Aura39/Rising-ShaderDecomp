@@ -1,7 +1,7 @@
-float4 g_LightPosVP;
-sampler g_Sampler0;
-float4 g_SslbParam;
-float4 g_TargetUvParam;
+float4 g_LightPosVP : register(c184);
+sampler g_Sampler0 : register(s13);
+float4 g_SslbParam : register(c185);
+float4 g_TargetUvParam : register(c194);
 
 float4 main(float2 texcoord : TEXCOORD) : COLOR
 {

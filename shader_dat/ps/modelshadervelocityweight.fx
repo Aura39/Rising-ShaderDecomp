@@ -1,5 +1,5 @@
-float4 g_BlurParam;
-sampler g_Sampler0;
+float4 g_BlurParam : register(c184);
+sampler g_Sampler0 : register(s1);
 
 struct PS_IN
 {

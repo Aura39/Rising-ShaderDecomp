@@ -1,8 +1,8 @@
-float4 g_CommonParam;
-float4x4 g_Proj;
-float4x4 g_View;
-float4x4 g_World;
-float4x4 g_WorldMatrix;
+float4 g_CommonParam : register(c185);
+float4x4 g_Proj : register(c4);
+float4x4 g_View : register(c0);
+float4x4 g_World : register(c16);
+float4x4 g_WorldMatrix : register(c189);
 
 struct VS_IN
 {

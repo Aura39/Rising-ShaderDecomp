@@ -1,5 +1,5 @@
-float4 g_MatrialColor;
-float4x4 g_WorldViewProjMatrix;
+float4 g_MatrialColor : register(c184);
+float4x4 g_WorldViewProjMatrix : register(c24);
 
 struct VS_OUT
 {

@@ -1,11 +1,11 @@
-sampler Color_1_sampler;
-float3 ambient_rate;
-float4 g_All_Offset;
-float4 lightpos;
-float normalmap_rate;
-sampler normalmap_sampler;
-float4 prefogcolor_enhance;
-float4 tile;
+sampler Color_1_sampler : register(s0);
+float3 ambient_rate : register(c40);
+float4 g_All_Offset : register(c55);
+float4 lightpos : register(c46);
+float normalmap_rate : register(c41);
+sampler normalmap_sampler : register(s1);
+float4 prefogcolor_enhance : register(c56);
+float4 tile : register(c44);
 
 struct PS_IN
 {

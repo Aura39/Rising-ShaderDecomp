@@ -1,13 +1,13 @@
-sampler g_Sampler0;
-float g_TexelWeights0;
-float g_TexelWeights1;
-float g_TexelWeights2;
-float g_TexelWeights3;
-float g_TexelWeights4;
-float g_TexelWeights5;
-float g_TexelWeights6;
-float g_TexelWeights7;
-float2 g_TotalOffset;
+sampler g_Sampler0 : register(s13);
+float g_TexelWeights0 : register(c74);
+float g_TexelWeights1 : register(c75);
+float g_TexelWeights2 : register(c76);
+float g_TexelWeights3 : register(c77);
+float g_TexelWeights4 : register(c78);
+float g_TexelWeights5 : register(c79);
+float g_TexelWeights6 : register(c80);
+float g_TexelWeights7 : register(c81);
+float2 g_TotalOffset : register(c65);
 
 struct PS_IN
 {

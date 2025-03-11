@@ -1,4 +1,4 @@
-float4 g_BasePos;
+float4 g_BasePos : register(c184);
 
 float4 main(float3 texcoord : TEXCOORD) : COLOR
 {

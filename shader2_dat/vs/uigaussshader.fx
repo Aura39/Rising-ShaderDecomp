@@ -1,14 +1,14 @@
-float4 g_Color;
-float2 g_TexelOffsets0;
-float2 g_TexelOffsets1;
-float2 g_TexelOffsets2;
-float2 g_TexelOffsets3;
-float2 g_TexelOffsets4;
-float2 g_TexelOffsets5;
-float2 g_TexelOffsets6;
-float2 g_TexelOffsets7;
-float4x4 g_ViewProjMatrix;
-float4x4 g_WorldMatrix;
+float4 g_Color : register(c64);
+float2 g_TexelOffsets0 : register(c66);
+float2 g_TexelOffsets1 : register(c67);
+float2 g_TexelOffsets2 : register(c68);
+float2 g_TexelOffsets3 : register(c69);
+float2 g_TexelOffsets4 : register(c70);
+float2 g_TexelOffsets5 : register(c71);
+float2 g_TexelOffsets6 : register(c72);
+float2 g_TexelOffsets7 : register(c73);
+float4x4 g_ViewProjMatrix : register(c54);
+float4x4 g_WorldMatrix : register(c58);
 
 struct VS_IN
 {

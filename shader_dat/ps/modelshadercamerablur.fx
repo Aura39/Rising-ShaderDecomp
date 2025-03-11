@@ -1,6 +1,6 @@
-float3 g_CameraSpeed;
-sampler g_Sampler0;
-sampler g_Sampler1;
+float3 g_CameraSpeed : register(c184);
+sampler g_Sampler0 : register(s13);
+sampler g_Sampler1 : register(s14);
 
 float4 main(float2 texcoord : TEXCOORD) : COLOR
 {

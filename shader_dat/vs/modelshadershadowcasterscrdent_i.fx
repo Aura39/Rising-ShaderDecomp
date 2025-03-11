@@ -1,6 +1,6 @@
-float g_DentRate;
-float4x4 g_ShadowView;
-float4x4 g_ShadowViewProjection;
+float g_DentRate : register(c190);
+float4x4 g_ShadowView : register(c32);
+float4x4 g_ShadowViewProjection : register(c28);
 
 struct VS_IN
 {

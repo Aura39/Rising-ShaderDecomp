@@ -1,9 +1,9 @@
-float4x4 g_ShadowView;
-float4x4 g_ShadowViewProj;
-float4x4 g_ShadowViewProj2;
-float4x4 g_ShadowViewProj3;
-float4x4 g_World;
-float4x4 g_WorldViewProj;
+float4x4 g_ShadowView : register(c32);
+float4x4 g_ShadowViewProj : register(c28);
+float4x4 g_ShadowViewProj2 : register(c195);
+float4x4 g_ShadowViewProj3 : register(c199);
+float4x4 g_World : register(c16);
+float4x4 g_WorldViewProj : register(c24);
 
 struct VS_IN
 {

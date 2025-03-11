@@ -1,5 +1,5 @@
-sampler g_Sampler0;
-float4 g_TargetUvParam;
+sampler g_Sampler0 : register(s13);
+float4 g_TargetUvParam : register(c194);
 
 float4 main(float2 texcoord : TEXCOORD) : COLOR
 {

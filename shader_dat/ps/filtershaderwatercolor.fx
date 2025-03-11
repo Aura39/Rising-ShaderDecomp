@@ -1,7 +1,7 @@
-sampler g_SceneSampler;
-float4 g_TargetUvParam;
-float3 g_offset1;
-float3 g_offset2;
+sampler g_SceneSampler : register(s0);
+float4 g_TargetUvParam : register(c194);
+float3 g_offset1 : register(c184);
+float3 g_offset2 : register(c185);
 
 float4 main(float2 texcoord : TEXCOORD) : COLOR
 {

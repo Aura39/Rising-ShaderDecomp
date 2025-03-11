@@ -1,4 +1,4 @@
-float4x4 g_ProjMtx;
+float4x4 g_ProjMtx : register(c4);
 
 struct VS_IN
 {

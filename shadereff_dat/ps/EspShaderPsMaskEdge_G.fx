@@ -1,7 +1,7 @@
-float4 g_EdgeColor;
-float4 g_Rate;
-sampler g_Sampler0;
-sampler g_Sampler1;
+float4 g_EdgeColor : register(c186);
+float4 g_Rate : register(c185);
+sampler g_Sampler0 : register(s0);
+sampler g_Sampler1 : register(s1);
 
 struct PS_IN
 {

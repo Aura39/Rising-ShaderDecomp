@@ -1,5 +1,5 @@
-float4 g_MatrialColor;
-sampler g_Sampler0;
+float4 g_MatrialColor : register(c62);
+sampler g_Sampler0 : register(s0);
 
 float4 main(float2 texcoord : TEXCOORD) : COLOR
 {

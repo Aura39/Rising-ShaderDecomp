@@ -1,7 +1,7 @@
-float3 g_CamPos;
-sampler g_Sampler2v;
-float4x4 g_WorldMatrix_vtx;
-float4x4 g_WorldViewProjMatrix;
+float3 g_CamPos : register(c185);
+sampler g_Sampler2v : register(s0);
+float4x4 g_WorldMatrix_vtx : register(c40);
+float4x4 g_WorldViewProjMatrix : register(c24);
 
 struct VS_IN
 {

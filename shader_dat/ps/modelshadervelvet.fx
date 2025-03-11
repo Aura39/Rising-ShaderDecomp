@@ -1,6 +1,6 @@
-float4 g_color;
-float4 g_otherParam;
-float4 prefogcolor_enhance;
+float4 g_color : register(c185);
+float4 g_otherParam : register(c186);
+float4 prefogcolor_enhance : register(c184);
 
 struct PS_IN
 {

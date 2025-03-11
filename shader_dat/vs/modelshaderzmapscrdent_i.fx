@@ -1,6 +1,6 @@
-float g_DentRate;
-float4x4 g_Proj;
-float4x4 g_View;
+float g_DentRate : register(c190);
+float4x4 g_Proj : register(c4);
+float4x4 g_View : register(c0);
 
 struct VS_IN
 {

@@ -1,4 +1,4 @@
-float2 influence;
+float2 influence : register(c184);
 
 float4 main(float3 texcoord : TEXCOORD) : COLOR
 {

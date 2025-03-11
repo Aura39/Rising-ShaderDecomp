@@ -1,6 +1,6 @@
-float3 g_CamPos;
-float4x4 g_WorldMatrix_vtx;
-float4x4 g_WorldViewProjMatrix;
+float3 g_CamPos : register(c185);
+float4x4 g_WorldMatrix_vtx : register(c16);
+float4x4 g_WorldViewProjMatrix : register(c24);
 
 struct VS_IN
 {

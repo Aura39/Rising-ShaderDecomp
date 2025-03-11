@@ -1,6 +1,6 @@
-sampler Color_1_sampler;
-sampler RefractMap_sampler;
-float4 g_refractHosei;
+sampler Color_1_sampler : register(s0);
+sampler RefractMap_sampler : register(s12);
+float4 g_refractHosei : register(c184);
 
 struct PS_IN
 {

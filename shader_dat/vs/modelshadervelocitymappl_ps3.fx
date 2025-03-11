@@ -1,6 +1,6 @@
-float4 g_BlurParam;
-float4x4 g_OldViewProjection;
-float4x4 g_ViewProjection;
+float4 g_BlurParam : register(c184);
+float4x4 g_OldViewProjection : register(c36);
+float4x4 g_ViewProjection : register(c8);
 
 struct VS_IN
 {

@@ -1,5 +1,5 @@
-sampler g_Sampler0;
-float2 g_direction;
+sampler g_Sampler0 : register(s0);
+float2 g_direction : register(c184);
 
 float4 main(float2 texcoord : TEXCOORD) : COLOR
 {

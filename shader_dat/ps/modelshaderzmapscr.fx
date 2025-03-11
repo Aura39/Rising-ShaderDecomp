@@ -1,5 +1,5 @@
-float4 g_CameraParam;
-float4x4 g_Proj;
+float4 g_CameraParam : register(c193);
+float4x4 g_Proj : register(c4);
 
 float4 main(float4 texcoord : TEXCOORD) : COLOR
 {

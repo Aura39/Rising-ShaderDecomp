@@ -1,7 +1,7 @@
-float4 g_Rate;
-sampler g_Sampler0;
-sampler g_Sampler1;
-sampler g_Sampler2;
+float4 g_Rate : register(c184);
+sampler g_Sampler0 : register(s0);
+sampler g_Sampler1 : register(s1);
+sampler g_Sampler2 : register(s2);
 
 struct PS_IN
 {

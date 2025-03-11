@@ -1,10 +1,10 @@
-float4 fogParam;
-float4x4 g_Proj;
-float4x4 g_ShadowView;
-float4x4 g_ViewInverseMatrix;
-float4x4 g_ViewProjection;
-float4x4 g_WorldMatrix;
-float4x4 g_WorldView;
+float4 fogParam : register(c184);
+float4x4 g_Proj : register(c4);
+float4x4 g_ShadowView : register(c32);
+float4x4 g_ViewInverseMatrix : register(c12);
+float4x4 g_ViewProjection : register(c8);
+float4x4 g_WorldMatrix : register(c16);
+float4x4 g_WorldView : register(c20);
 
 struct VS_IN
 {

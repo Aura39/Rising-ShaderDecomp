@@ -1,12 +1,12 @@
-float ems_bias;
-float ems_bleed;
-float3 fog;
-float fogfar;
-float fognear;
-sampler g_Sampler1;
-float4x4 g_ShadowViewProj;
-float3 lightPos;
-float psType;
+float ems_bias : register(c190);
+float ems_bleed : register(c191);
+float3 fog : register(c185);
+float fogfar : register(c187);
+float fognear : register(c186);
+sampler g_Sampler1 : register(s0);
+float4x4 g_ShadowViewProj : register(c28);
+float3 lightPos : register(c188);
+float psType : register(c192);
 
 struct PS_IN
 {
